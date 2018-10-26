@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[transaction]]></title>
+      <url>/2018/05/31/transaction/</url>
+      <content type="html"><![CDATA[<h3 id="事务的本质"><a href="#事务的本质" class="headerlink" title="事务的本质"></a>事务的本质</h3><h3 id="MySQL事务"><a href="#MySQL事务" class="headerlink" title="MySQL事务"></a>MySQL事务</h3><h3 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a>Redis事务</h3><h3 id="Kafka事务"><a href="#Kafka事务" class="headerlink" title="Kafka事务"></a>Kafka事务</h3>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 事务 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[unsolved-problem-5]]></title>
+      <url>/2018/05/16/unsolved-problem-5/</url>
+      <content type="html"><![CDATA[<p>问题背景：</p>
+<pre><code>实现可扩展高可用的计数系统，满足不同业务的计数需求，并可提供简单的统计功能。如访问pv、uv的分时统计等 或微博的实时评论、转发、关注数等
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 计数问题 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[unsolved-problem-4]]></title>
+      <url>/2018/05/16/unsolved-problem-4/</url>
+      <content type="html"><![CDATA[<p>问题背景：</p>
+<pre><code>完整的抢购系统方案
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 抢购系统 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[unsolved-problem-3]]></title>
+      <url>/2018/05/16/unsolved-problem-3/</url>
+      <content type="html"><![CDATA[<p>问题背景：</p>
+<pre><code>针对系统中不同的ID生成需求，设计通用的ID生成系统，保证高可用和性能。有序无序？可否反解？承载能力？
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> ID生成器 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[unresolved_problem_2]]></title>
+      <url>/2018/05/16/unsolved-problem-2/</url>
+      <content type="html"><![CDATA[<p>问题背景：</p>
+<pre><code>如何设计通用的全局限流方案，实现可配置的接口、总体限流？
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 全局限流问题 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[unsolved_problem_1]]></title>
+      <url>/2018/05/16/unsolved-problem-1/</url>
+      <content type="html"><![CDATA[<p>问题背景：</p>
+<p>   针对一个大的文本文件，如何根据给定的关键词字典进行快速匹配并标红</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 关键词匹配问题 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql_index]]></title>
+      <url>/2018/04/09/mysql-index/</url>
+      <content type="html"><![CDATA[<p>以下内容基于mysql innodb引擎</p>
+<h3 id="索引数据结构"><a href="#索引数据结构" class="headerlink" title="索引数据结构"></a>索引数据结构</h3><h4 id="B-tree"><a href="#B-tree" class="headerlink" title="B-tree"></a>B-tree</h4><h4 id="B-tree-1"><a href="#B-tree-1" class="headerlink" title="B+tree"></a>B+tree</h4><h3 id="索引存储结构"><a href="#索引存储结构" class="headerlink" title="索引存储结构"></a>索引存储结构</h3><h4 id="聚集索引"><a href="#聚集索引" class="headerlink" title="聚集索引"></a>聚集索引</h4><h4 id="非聚集索引"><a href="#非聚集索引" class="headerlink" title="非聚集索引"></a>非聚集索引</h4><h3 id="索引的应用"><a href="#索引的应用" class="headerlink" title="索引的应用"></a>索引的应用</h3><h4 id="B-索引"><a href="#B-索引" class="headerlink" title="B+索引"></a>B+索引</h4><h4 id="自适应hash索引"><a href="#自适应hash索引" class="headerlink" title="自适应hash索引"></a>自适应hash索引</h4><h4 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h4><h3 id="为什么是B-tree"><a href="#为什么是B-tree" class="headerlink" title="为什么是B+ tree"></a>为什么是B+ tree</h3><p> 主要考虑两点：磁盘IO次数、区间访问（基于范围的查询）效率</p>
+<h5 id="和红黑树对比"><a href="#和红黑树对比" class="headerlink" title="和红黑树对比"></a>和红黑树对比</h5><p> 在大规模数据存储的时候，红黑树往往出现由于树的深度过大而造成磁盘IO读写过于频繁，进而导致效率低下的情况。在内存中使用改数据结构比较多</p>
+<h4 id="和B-tree对比"><a href="#和B-tree对比" class="headerlink" title="和B-tree对比"></a>和B-tree对比</h4><p>B-树（B类树）的特定就是每层节点数目非常多，层数很少，目的就是为了就少磁盘IO次数。但是B-树的每个节点都有data域（指针），这无疑增大了节点大小，说白了增加了磁盘IO次数（磁盘IO一次读出的数据量大小是固定的，单个数据变大，每次读出的就少，IO次数增多）</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql_conversion]]></title>
+      <url>/2018/03/30/mysql-conversion/</url>
+      <content type="html"><![CDATA[<h3 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h3><h4 id="数据类型字段"><a href="#数据类型字段" class="headerlink" title="数据类型字段"></a>数据类型字段</h4><p>如果以数字开关的，后面的字符将被截断，只取前面的数字值，如果不以数字开关的将被置为0</p>
+<p>table表中的columnA字段为int类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=&apos;7788Ab&apos;</span><br></pre></td></tr></table></figure></p>
+<p>相当于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=7788</span><br></pre></td></tr></table></figure></p>
+<p>而<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=&apos;Ab7788&apos;</span><br></pre></td></tr></table></figure></p>
+<p>相当于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=0</span><br></pre></td></tr></table></figure></p>
+<h4 id="字符类型字段"><a href="#字符类型字段" class="headerlink" title="字符类型字段"></a>字符类型字段</h4><p>table表中的columnB字段为varchar类型,且有索引idx_columnB<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnB=&apos;7788Ab&apos;</span><br></pre></td></tr></table></figure></p>
+<p>可以正常使用索引<br>而<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnB=7788</span><br></pre></td></tr></table></figure></p>
+<p>发生隐式类型转换，不能使用索引</p>
+<h4 id="官方规则"><a href="#官方规则" class="headerlink" title="官方规则"></a>官方规则</h4><ul>
+<li>两个参数至少有一个是 NULL 时，比较的结果也是 NULL，例外是使用 &lt;=&gt; 对两个 NULL 做比较时会返回 1，这两种情况都不需要做类型转换</li>
+<li>两个参数都是字符串，会按照字符串来比较，不做类型转换</li>
+<li>两个参数都是整数，按照整数来比较，不做类型转换</li>
+<li>十六进制的值和非数字做比较时，会被当做二进制串</li>
+<li>有一个参数是 TIMESTAMP 或 DATETIME，并且另外一个参数是常量，常量会被转换为 timestamp</li>
+<li>有一个参数是 decimal 类型，如果另外一个参数是 decimal 或者整数，会将整数转换为 decimal 后进行比较，如果另外一个参数是浮点数，则会把 decimal 转换为浮点数进行比较</li>
+<li>所有其他情况下，两个参数都会被转换为浮点数再进行比较</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[consistent_hash]]></title>
+      <url>/2018/03/28/consistent-hash/</url>
+      <content type="html"><![CDATA[<h3 id="为什么需要一致性hash"><a href="#为什么需要一致性hash" class="headerlink" title="为什么需要一致性hash"></a>为什么需要一致性hash</h3><h3 id="算法的理解"><a href="#算法的理解" class="headerlink" title="算法的理解"></a>算法的理解</h3><p><a href="http://en.wikipedia.org/wiki/Consistent_hashing" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Consistent_hashing</a></p>
+<h3 id="具体实现及应用"><a href="#具体实现及应用" class="headerlink" title="具体实现及应用"></a>具体实现及应用</h3><p>Dubbo中一致性Hash的实现：com.alibaba.dubbo.rpc.cluster.loadbalance.ConsistentHashLoadBalance</p>
+<p>Motan中一致性Hash的实现：com.weibo.api.motan.cluster.loadbalance.ConsistentHashLoadBalance<t></t></p>
+<p>Guava中一致性Hash实现：com.google.common.hash.Hashing.consistentHash(*)</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 分布式 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mqtt]]></title>
+      <url>/2018/03/28/mqtt/</url>
+      <content type="html"><![CDATA[<h3 id="与其他协议的区别"><a href="#与其他协议的区别" class="headerlink" title="与其他协议的区别"></a>与其他协议的区别</h3><p>xmpp等</p>
+<h3 id="协议格式"><a href="#协议格式" class="headerlink" title="协议格式"></a>协议格式</h3><p><a href="https://mcxiaoke.gitbooks.io/mqtt-cn/content/" target="_blank" rel="noopener">https://mcxiaoke.gitbooks.io/mqtt-cn/content/</a></p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>java based broker： <a href="https://github.com/andsel/moquette" target="_blank" rel="noopener">https://github.com/andsel/moquette</a></p>
+<p>netty中支持mqtt的编解码handler: <a href="https://netty.io/4.1/api/io/netty/handler/codec/mqtt/package-summary.html" target="_blank" rel="noopener">https://netty.io/4.1/api/io/netty/handler/codec/mqtt/package-summary.html</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 物联网 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[threadlocal]]></title>
+      <url>/2018/03/27/threadlocal/</url>
+      <content type="html"><![CDATA[<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">public class RawRunnableTest &#123;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testRawInheritableThreadLocal() throws InterruptedException &#123;</span><br><span class="line">        final ThreadLocal&lt;Span&gt; threadLocal = new ThreadLocal&lt;&gt;();</span><br><span class="line">        threadLocal.set(new Span(&quot;xiexiexie&quot;));</span><br><span class="line">        //输出 xiexiexie</span><br><span class="line">        Object o = threadLocal.get();</span><br><span class="line">        Runnable runnable = new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                System.out.println(threadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">                threadLocal.set(new Span(&quot;zhangzhangzhang1&quot;));</span><br><span class="line">                System.out.println(threadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        Runnable runnable2 = new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                System.out.println(threadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">                threadLocal.set(new Span(&quot;zhangzhangzhang2&quot;));</span><br><span class="line">                System.out.println(threadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(2);</span><br><span class="line">        executorService.submit(runnable);</span><br><span class="line">        TimeUnit.SECONDS.sleep(1);</span><br><span class="line">        executorService.submit(runnable2);</span><br><span class="line">        TimeUnit.SECONDS.sleep(1);</span><br><span class="line">        Span span = threadLocal.get();</span><br><span class="line">        System.out.println(span + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class Span &#123;</span><br><span class="line">        public String name;</span><br><span class="line">        public int age;</span><br><span class="line"></span><br><span class="line">        public Span(String name) &#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public String toString() &#123;</span><br><span class="line">            return &quot;Span&#123;&quot; +</span><br><span class="line">                    &quot;name=&apos;&quot; + name + &apos;\&apos;&apos; +</span><br><span class="line">                    &quot;, age=&quot; + age +</span><br><span class="line">                    &apos;&#125;&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nullthead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;zhangzhangzhang1&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">nullthead-Thread[pool-1-thread-2,5,main]</span><br><span class="line">Span&#123;name=&apos;zhangzhangzhang2&apos;, age=0&#125;thead-Thread[pool-1-thread-2,5,main]</span><br><span class="line">Span&#123;name=&apos;xiexiexie&apos;, age=0&#125;thead-Thread[main,5,main]</span><br></pre></td></tr></table></figure></p>
+<p>在子线程中获取到的内容为null</p>
+<h3 id="InheritableThreadLocal"><a href="#InheritableThreadLocal" class="headerlink" title="InheritableThreadLocal"></a>InheritableThreadLocal</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">public class RawRunnableTest &#123;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testRawInheritableThreadLocal() throws InterruptedException &#123;</span><br><span class="line">        final InheritableThreadLocal&lt;Span&gt; inheritableThreadLocal = new InheritableThreadLocal&lt;&gt;();</span><br><span class="line">        inheritableThreadLocal.set(new Span(&quot;xiexiexie&quot;));</span><br><span class="line">        //输出 xiexiexie</span><br><span class="line">        Object o = inheritableThreadLocal.get();</span><br><span class="line">        Runnable runnable = new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">                inheritableThreadLocal.set(new Span(&quot;zhangzhangzhang1&quot;));</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        Runnable runnable2 = new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">                inheritableThreadLocal.set(new Span(&quot;zhangzhangzhang2&quot;));</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(1);</span><br><span class="line">        executorService.submit(runnable);</span><br><span class="line">        TimeUnit.SECONDS.sleep(1);</span><br><span class="line">        executorService.submit(runnable2);</span><br><span class="line">        TimeUnit.SECONDS.sleep(1);</span><br><span class="line">        Span span = inheritableThreadLocal.get();</span><br><span class="line">        System.out.println(span + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class Span &#123;</span><br><span class="line">        public String name;</span><br><span class="line">        public int age;</span><br><span class="line"></span><br><span class="line">        public Span(String name) &#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public String toString() &#123;</span><br><span class="line">            return &quot;Span&#123;&quot; +</span><br><span class="line">                    &quot;name=&apos;&quot; + name + &apos;\&apos;&apos; +</span><br><span class="line">                    &quot;, age=&quot; + age +</span><br><span class="line">                    &apos;&#125;&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Span&#123;name=&apos;xiexiexie&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;zhangzhangzhang1&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;zhangzhangzhang1&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;zhangzhangzhang2&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;xiexiexie&apos;, age=0&#125;thead-Thread[main,5,main]</span><br></pre></td></tr></table></figure></p>
+<p>由于线程重用，Runnable获取到的内容是脏的（第3行输出）,实际上应该是获取提交到线程池时的内容</p>
+<h3 id="TransmittableThreadLocal"><a href="#TransmittableThreadLocal" class="headerlink" title="TransmittableThreadLocal"></a>TransmittableThreadLocal</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">public class RawRunnableTest &#123;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testRawInheritableThreadLocal() throws InterruptedException &#123;</span><br><span class="line">        final InheritableThreadLocal&lt;Span&gt; inheritableThreadLocal = new TransmittableThreadLocal&lt;&gt;();</span><br><span class="line">        inheritableThreadLocal.set(new Span(&quot;xiexiexie&quot;));</span><br><span class="line">        //输出 xiexiexie</span><br><span class="line">        Object o = inheritableThreadLocal.get();</span><br><span class="line">        Runnable runnable = TtlRunnable.get(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">                inheritableThreadLocal.set(new Span(&quot;zhangzhangzhang1&quot;));</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        Runnable runnable2 = TtlRunnable.get(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">                inheritableThreadLocal.set(new Span(&quot;zhangzhangzhang2&quot;));</span><br><span class="line">                System.out.println(inheritableThreadLocal.get() + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(1);</span><br><span class="line">        executorService.submit(runnable);</span><br><span class="line">        TimeUnit.SECONDS.sleep(1);</span><br><span class="line">        executorService.submit(runnable2);</span><br><span class="line">        TimeUnit.SECONDS.sleep(1);</span><br><span class="line">        Span span = inheritableThreadLocal.get();</span><br><span class="line">        System.out.println(span + &quot;thead-&quot; + Thread.currentThread());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class Span &#123;</span><br><span class="line">        public String name;</span><br><span class="line">        public int age;</span><br><span class="line"></span><br><span class="line">        public Span(String name) &#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public String toString() &#123;</span><br><span class="line">            return &quot;Span&#123;&quot; +</span><br><span class="line">                    &quot;name=&apos;&quot; + name + &apos;\&apos;&apos; +</span><br><span class="line">                    &quot;, age=&quot; + age +</span><br><span class="line">                    &apos;&#125;&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Span&#123;name=&apos;xiexiexie&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;zhangzhangzhang1&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;xiexiexie&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;zhangzhangzhang2&apos;, age=0&#125;thead-Thread[pool-1-thread-1,5,main]</span><br><span class="line">Span&#123;name=&apos;xiexiexie&apos;, age=0&#125;thead-Thread[main,5,main]</span><br></pre></td></tr></table></figure></p>
+<p>当然也可以包装Callable和Executors，具体见<a href="https://github.com/alibaba/transmittable-thread-local" target="_blank" rel="noopener">https://github.com/alibaba/transmittable-thread-local</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> java线程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql_hint_comment]]></title>
+      <url>/2018/03/27/mysql-hint-comment/</url>
+      <content type="html"><![CDATA[<h3 id="Mysql-语法"><a href="#Mysql-语法" class="headerlink" title="Mysql 语法"></a>Mysql 语法</h3><h4 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h4><p><a href="https://dev.mysql.com/doc/refman/5.7/en/comments.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/5.7/en/comments.html</a></p>
+<h4 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h4><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="Cobar中的应用"><a href="#Cobar中的应用" class="headerlink" title="Cobar中的应用"></a>Cobar中的应用</h4><p><a href="https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/hint/PartitionOperandHintParser.java" target="_blank" rel="noopener">https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/hint/PartitionOperandHintParser.java</a></p>
+<p><a href="https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/ServerRouter.java" target="_blank" rel="noopener">https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/ServerRouter.java</a></p>
+<h4 id="MyCat中的应用"><a href="#MyCat中的应用" class="headerlink" title="MyCat中的应用"></a>MyCat中的应用</h4><p><a href="https://github.com/MyCATApache/Mycat-Server/blob/712518e8ce257f34f71088d0fffb74d40c675a54/src/main/java/io/mycat/route/RouteService.java" target="_blank" rel="noopener">https://github.com/MyCATApache/Mycat-Server/blob/712518e8ce257f34f71088d0fffb74d40c675a54/src/main/java/io/mycat/route/RouteService.java</a></p>
+<h4 id="可扩展的应用"><a href="#可扩展的应用" class="headerlink" title="可扩展的应用"></a>可扩展的应用</h4><p>分布式调用追踪——————业务追踪溯源</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[lsm_tree]]></title>
+      <url>/2018/03/27/lsm-tree/</url>
+      <content type="html"><![CDATA[<h3 id="为什么需要LSM"><a href="#为什么需要LSM" class="headerlink" title="为什么需要LSM"></a>为什么需要LSM</h3><p>与B树、B+树、红黑树的区别</p>
+<h3 id="LSM原理"><a href="#LSM原理" class="headerlink" title="LSM原理"></a>LSM原理</h3><h3 id="LSM的应用"><a href="#LSM的应用" class="headerlink" title="LSM的应用"></a>LSM的应用</h3><h4 id="LSM与LevelDB"><a href="#LSM与LevelDB" class="headerlink" title="LSM与LevelDB"></a>LSM与LevelDB</h4><p><a href="https://github.com/dain/leveldb" target="_blank" rel="noopener">https://github.com/dain/leveldb</a></p>
+<h4 id="LSM与HBase"><a href="#LSM与HBase" class="headerlink" title="LSM与HBase"></a>LSM与HBase</h4>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 存储引擎 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[so_broadcast]]></title>
+      <url>/2018/03/23/so-broadcast/</url>
+      <content type="html"><![CDATA[<p>Netty在开发基于udp协议的代码中server段设置的参数broadcast有什么意义？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">initServer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        EventLoopGroup group = <span class="keyword">new</span> NioEventLoopGroup();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Bootstrap bootstrap = <span class="keyword">new</span> Bootstrap();</span><br><span class="line">            bootstrap.group(group)</span><br><span class="line">                    .channel(NioDatagramChannel.class)</span><br><span class="line">                    .option(ChannelOption.SO_BROADCAST, <span class="keyword">true</span>)</span><br><span class="line">                    .handler(<span class="keyword">new</span> UdpServerHandler());</span><br><span class="line">            Channel channel = bootstrap.bind(AppConstants.SEARCH_PORT).sync().channel();</span><br><span class="line">            channel.closeFuture().await();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            group.shutdownGracefully();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p> 设置SO_BROADCAST选项为0，只接受单播数据报<br> 设置SO_BROADCASE选项为1，接受UDP广播</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Netty,网络 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[web容器]]></title>
+      <url>/2018/02/13/web-containers/</url>
+      <content type="html"><![CDATA[<h3 id="web容器有哪些选择"><a href="#web容器有哪些选择" class="headerlink" title="web容器有哪些选择"></a>web容器有哪些选择</h3><ol>
+<li>Tomcat</li>
+<li>Jetty</li>
+<li>Undertow</li>
+<li>基于Netty的**</li>
+</ol>
+<h3 id="对比及区别"><a href="#对比及区别" class="headerlink" title="对比及区别"></a>对比及区别</h3><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3>]]></content>
+      
+        
+        <tags>
+            
+            <tag> web container </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[动态规划]]></title>
+      <url>/2018/01/25/dynamic-programming/</url>
+      <content type="html"><![CDATA[<p>原文转自：<a href="http://www.sohu.com/a/153858619_466939" target="_blank" rel="noopener">http://www.sohu.com/a/153858619_466939</a></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>题目1：</p>
+<p>有一座高度是10级台阶的楼梯，从下往上走，每跨一步只能向上1级或者2级台阶。要求用程序来求出一共有多少种走法。</p>
+<p>题目二：</p>
+<p>有一个国家发现了5座金矿，每座金矿的黄金储量不同，需要参与挖掘的工人数也不同。参与挖矿工人的总数是10人。每座金矿要么全挖，要么不挖，不能派出一半人挖取一半金矿。要求用程序求解出，要想得到尽可能多的黄金，应该选择挖取哪几座金矿？</p>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>TODO</p>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><ol>
+<li><p>最优子结构</p>
+</li>
+<li><p>边界</p>
+</li>
+<li><p>状态转移公式</p>
+</li>
+</ol>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[大小端问题]]></title>
+      <url>/2018/01/19/little-big-endian/</url>
+      <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>计算机系统中内存是以字节为单位进行编址的，每个地址单元都唯一的对应着1个字节（8 bit）。这可以应对char类型数据的存储要求，因为char类型长度刚好是1个字节，但是有些类型的长度是超过1个字节的（字符串虽然是多字节的，但它本质是由一个个char类型组成的类似数组的结构而已），比如C/C++中，short类型一般是2个字节，int类型一般4个字节等。因此这里就存在着一个如何安排多个字节数据中各字节存放顺序的问题。正是因为不同的安排顺序导致了大端存储模式和小端存储模式的存在。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>假如有一个4字节的数据为 0x12 34 56 78（十进制：305419896，0x12为高字节，0x78为低字节），若将其存放于地址 0x4000 8000中，则有：</p>
+<p>内存地址    0x4000 8000（低地址）    0x4000 8001    0x4000 8002    0x4000 8003（高地址）<br>大端模式    0x12（高字节）    0x34    0x56    0x78（低字节）<br>小端模式    0x78（低字节）    0x56    0x34    0x12（高字节）</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>大端模式优点：</p>
+<ol>
+<li>符号位在所表示的数据的内存的第一个字节中，便于快速判断数据的正负和大小</li>
+</ol>
+<p>小端模式优点：  </p>
+<ol>
+<li>内存的低地址处存放低字节，所以在强制转换数据时不需要调整字节的内容（注解：比如把int的4字节强制转换成short的2字节时，就直接把int数据存储的前两个字节给short就行，因为其前两个字节刚好就是最低的两个字节，符合转换逻辑）；  </li>
+<li>CPU做数值运算时从内存中依顺序依次从低位到高位取数据进行运算，直到最后刷新最高位的符号位，这样的运算方式会更高效</li>
+</ol>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[计算机内部的数值存储]]></title>
+      <url>/2018/01/08/binary-in-computer/</url>
+      <content type="html"><![CDATA[<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%95%B0%E5%80%BC%E5%AD%98%E5%82%A8">计算机中的数值存储</a><ul>
+<li><a href="#%E6%9C%BA%E5%99%A8%E6%95%B0%E5%92%8C%E7%9C%9F%E5%80%BC">机器数和真值</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81">原码、反码、补码</a><ul>
+<li><a href="#%E5%8E%9F%E7%A0%81%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%981-1-2">原码有什么问题（1+（-1）=-2）</a></li>
+<li><a href="#%E5%8F%8D%E7%A0%81%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%981-1-0">反码有什么问题（1+（-1）=-0）</a></li>
+<li><a href="#%E8%A1%A5%E7%A0%81%E8%BF%90%E7%AE%97">补码运算</a></li>
+<li><a href="#%E8%A1%A5%E7%A0%81%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%BA%A2%E5%87%BA">补码表示的溢出</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h3 id="计算机中的数值存储"><a href="#计算机中的数值存储" class="headerlink" title="计算机中的数值存储"></a>计算机中的数值存储</h3><h4 id="机器数和真值"><a href="#机器数和真值" class="headerlink" title="机器数和真值"></a>机器数和真值</h4><p>一个数在计算机中的二进制表示形式, 叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.</p>
+<p>比如，十进制中的数 +3 ，计算机字长为8位，转换成二进制就是00000011。如果是 -3 ，就是 10000011 。那么，这里的 00000011 和 10000011 就是机器数。</p>
+<h3 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h3><p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值。</p>
+<p>反码的表示方法是：正数的反码是其本身；的反码是在其原码的基础上, 符号位不变，其余各个位取反。</p>
+<p>补码的表示方法是：正数的补码就是其本身；的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)。</p>
+<h4 id="原码有什么问题（1-（-1）-2）"><a href="#原码有什么问题（1-（-1）-2）" class="headerlink" title="原码有什么问题（1+（-1）=-2）"></a>原码有什么问题（1+（-1）=-2）</h4><p>如果使用原码进行计算：<br>   1 - 1 = 1 + (-1) = [00000001]原 + [10000001]原 = [10000010]原 = -2</p>
+<p>问题：计算错误</p>
+<h4 id="反码有什么问题（1-（-1）-0）"><a href="#反码有什么问题（1-（-1）-0）" class="headerlink" title="反码有什么问题（1+（-1）=-0）"></a>反码有什么问题（1+（-1）=-0）</h4><p>如果使用反码进行计算：<br>   1 - 1 = 1 + (-1)<br>   = [0000 0001]原 + [1000 0001]原<br>   = [0000 0001]反 + [1111 1110]反<br>   = [1111 1111]反 = [1000 0000]原<br>   = -0<br>问题：0带符号是没有任何意义的，而且会有[0000 0000]原和[1000 0000]原两个编码表示0。</p>
+<h4 id="补码运算"><a href="#补码运算" class="headerlink" title="补码运算"></a>补码运算</h4><p>1-1 = 1 + (-1)<br>= [0000 0001]原 + [1000 0001]原<br>= [0000 0001]补 + [1111 1111]补<br>= [0000 0000]补=[0000 0000]原</p>
+<h4 id="补码表示的溢出"><a href="#补码表示的溢出" class="headerlink" title="补码表示的溢出"></a>补码表示的溢出</h4><p>由于计算机中的数字用补码表示，例如8bit的byte类型的表示范围为：</p>
+<p>[-128, 127]</p>
+<p>0 = [0000 0000]（补）</p>
+<p>-128 = [1000 0000]（补）</p>
+<p>127 = [0111 1111]（补）</p>
+<p>当byte类型的变量超上限127时，如：</p>
+<p>+128 = -（-128）= 127 + 1<br>= [1111 1111]（补）+ [0000 0001]（补）<br>= [1000 0000]（补）<br>= -128</p>
+<p>+129 = 127 + 2<br>= [1111 1111]（补）+ [0000 0001]（补）<br>= [1000 0001]（补）<br>= [1111 1111]（原）<br>= -127</p>
+<p>当byte类型的变量超过下限-128时：</p>
+<p>-129 = -128 - 1<br>= [1000 0000]（补) - [0000 0001]（补）<br>= [0111 1111]（补）<br>= 127</p>
+<p>-130 = -128 - 2<br>= [1000 0000]（补) - [0000 0010]（补）<br>= [0111 1110]（补）<br>= 126</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 计算机基础 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[spring boot fatjar的扫描]]></title>
+      <url>/2018/01/05/fatjar/</url>
+      <content type="html"><![CDATA[<h3 id="spring-boot-maven-plugin"><a href="#spring-boot-maven-plugin" class="headerlink" title="spring-boot-maven-plugin"></a>spring-boot-maven-plugin</h3><p>fat jar的结构<br><img src="/img/layout.png" alt="&quot;结构&quot;"></p>
+<h3 id="fat-jar问题"><a href="#fat-jar问题" class="headerlink" title="fat jar问题"></a>fat jar问题</h3><p>问题：<a href="https://github.com/spring-projects/spring-boot/issues/1468" target="_blank" rel="noopener">Jersey doesn’t always work with Spring Boot fat jars</a></p>
+<p>发布说明：1.4版本提供了处理方法<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.4-Release-Notes" target="_blank" rel="noopener">https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.4-Release-Notes</a></p>
+<h3 id="处理方式"><a href="#处理方式" class="headerlink" title="处理方式"></a>处理方式</h3><h4 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h4><p>打包插件添加需要特别处理的jar包如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;requiresUnpack&gt;</span><br><span class="line">                        &lt;!--指定需要unpack的依赖--&gt;</span><br><span class="line">                        &lt;dependency&gt;</span><br><span class="line">                            &lt;groupId&gt;com.netflix.eureka&lt;/groupId&gt;</span><br><span class="line">                            &lt;artifactId&gt;eureka-core&lt;/artifactId&gt;</span><br><span class="line">                        &lt;/dependency&gt;</span><br><span class="line">                        &lt;dependency&gt;</span><br><span class="line">                            &lt;groupId&gt;com.netflix.eureka&lt;/groupId&gt;</span><br><span class="line">                            &lt;artifactId&gt;eureka-client&lt;/artifactId&gt;</span><br><span class="line">                        &lt;/dependency&gt;</span><br><span class="line">                    &lt;/requiresUnpack&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
+<p>查看插件打完的fat jar信息</p>
+<p><img src="/img/zipnote.png" alt="&quot;comment&quot;"></p>
+<h4 id="spring-boot-应用启动逻辑"><a href="#spring-boot-应用启动逻辑" class="headerlink" title="spring boot 应用启动逻辑"></a>spring boot 应用启动逻辑</h4><p>springboot的JarLauncher继承自ExecutableArchiveLauncher，会从manifest文件中获取main-class，start-class</p>
+<p>spring boot 实现了自定义的classLoader——LaunchedURLClassLoader，以当前fat jar开始进行扫描BOOT-INF/classes/，BOOT-INF/lib/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">protected Archive getNestedArchive(Archive.Entry entry) throws IOException &#123;</span><br><span class="line">    JarEntry jarEntry = ((JarFileEntry)entry).getJarEntry();</span><br><span class="line">    // 对需要unpack的jar 特殊处理</span><br><span class="line">    if (jarEntry.getComment().startsWith(&quot;UNPACK:&quot;))</span><br><span class="line">      return getUnpackedNestedArchive(jarEntry);</span><br><span class="line">    try</span><br><span class="line">    &#123;</span><br><span class="line">      JarFile jarFile = this.jarFile.getNestedJarFile(jarEntry);</span><br><span class="line">      return new JarFileArchive(jarFile);</span><br><span class="line">    &#125;</span><br><span class="line">    catch (Exception ex)</span><br><span class="line">    &#123;</span><br><span class="line">      throw new IllegalStateException(&quot;Failed to get nested archive for entry &quot; + entry</span><br><span class="line">        .getName(), ex);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>首次运行时进行解压：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">private Archive getUnpackedNestedArchive(JarEntry jarEntry) throws IOException &#123;</span><br><span class="line">   String name = jarEntry.getName();</span><br><span class="line">   if (name.lastIndexOf(&quot;/&quot;) != -1) &#123;</span><br><span class="line">     name = name.substring(name.lastIndexOf(&quot;/&quot;) + 1);</span><br><span class="line">   &#125;</span><br><span class="line">   File file = new File(getTempUnpackFolder(), name);</span><br><span class="line">   if ((!file.exists()) || (file.length() != jarEntry.getSize())) &#123;</span><br><span class="line">      // 解压到tmp目录，子目录是如fatjar name-spring-boot-libs-2264fe79-9952-40a4-a81e-4c71af37eb57/之类的，具体目录生成规则见最后一个函数 </span><br><span class="line">       unpack(jarEntry, file);</span><br><span class="line">   &#125;</span><br><span class="line">   return new JarFileArchive(file, file.toURI().toURL());</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> private File getTempUnpackFolder() &#123;</span><br><span class="line">   if (this.tempUnpackFolder == null) &#123;</span><br><span class="line">     File tempFolder = new File(System.getProperty(&quot;java.io.tmpdir&quot;));</span><br><span class="line">     this.tempUnpackFolder = createUnpackFolder(tempFolder);</span><br><span class="line">   &#125;</span><br><span class="line">   return this.tempUnpackFolder;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> private File createUnpackFolder(File parent) &#123;</span><br><span class="line">   int attempts = 0;</span><br><span class="line">   while (attempts++ &lt; 1000) &#123;</span><br><span class="line">     String fileName = new File(this.jarFile.getName()).getName();</span><br><span class="line"></span><br><span class="line">     File unpackFolder = new File(parent, fileName + &quot;-spring-boot-libs-&quot; + </span><br><span class="line">       UUID.randomUUID());</span><br><span class="line">     if (unpackFolder.mkdirs()) &#123;</span><br><span class="line">       return unpackFolder;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   throw new IllegalStateException(&quot;Failed to create unpack folder in directory &apos;&quot; + parent + &quot;&apos;&quot;);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> springboot </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[新年读书计划]]></title>
+      <url>/2018/01/05/reading/</url>
+      <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>类别</th>
+<th style="text-align:right">书名</th>
+<th style="text-align:center">计划时间</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>软件工程</td>
+<td style="text-align:right">《编程珠玑》</td>
+<td style="text-align:center">2018.01</td>
+</tr>
+<tr>
+<td>软件工程</td>
+<td style="text-align:right">《人月神话》</td>
+<td style="text-align:center">2018.02</td>
+</tr>
+<tr>
+<td>系统架构</td>
+<td style="text-align:right">《高可用架构》</td>
+<td style="text-align:center">2018.01</td>
+<td>done</td>
+</tr>
+<tr>
+<td>技术框架</td>
+<td style="text-align:right">《Netty权威指南》</td>
+<td style="text-align:center">2018.02</td>
+</tr>
+<tr>
+<td>基础知识</td>
+<td style="text-align:right">《深入理解计算机系统》</td>
+<td style="text-align:center">2018.03</td>
+</tr>
+<tr>
+<td>基础知识</td>
+<td style="text-align:right">《TCP/IP详解》</td>
+<td style="text-align:center">2018.03</td>
+</tr>
+<tr>
+<td>分布式</td>
+<td style="text-align:right">《Redis设计与实现》</td>
+<td style="text-align:center">2018.04</td>
+<td>done</td>
+</tr>
+<tr>
+<td>分布式</td>
+<td style="text-align:right">《Kafka技术内幕》</td>
+<td style="text-align:center">2018.04</td>
+</tr>
+<tr>
+<td>语言</td>
+<td style="text-align:right">《Go WEB编程》</td>
+<td style="text-align:center">2018.05</td>
+</tr>
+<tr>
+<td>语言</td>
+<td style="text-align:right">《Go 并发编程》</td>
+<td style="text-align:center">2018.05</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 阅读 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高效能人士的7个习惯]]></title>
+      <url>/2017/12/29/7goods/</url>
+      <content type="html"><![CDATA[<ul>
+<li>主动积极</li>
+<li>以终为始</li>
+<li>要事第一</li>
+<li>双赢思维</li>
+<li>统合综效</li>
+<li>知彼解己</li>
+<li>不断更新</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 习惯 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[categories]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+  
+</search>
