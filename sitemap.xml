@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://arebya.github.io/2018/10/27/algorithm/</loc>
+    
+    <lastmod>2018-10-27T09:49:25.425Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://arebya.github.io/tags/index.html</loc>
     
     <lastmod>2018-10-26T07:26:10.028Z</lastmod>
@@ -79,6 +86,13 @@
   </url>
   
   <url>
+    <loc>https://arebya.github.io/2018/04/09/mysql-index/</loc>
+    
+    <lastmod>2018-10-26T07:26:10.024Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://arebya.github.io/2018/01/05/reading/</loc>
     
     <lastmod>2018-10-26T07:26:10.024Z</lastmod>
@@ -93,7 +107,7 @@
   </url>
   
   <url>
-    <loc>https://arebya.github.io/2018/04/09/mysql-index/</loc>
+    <loc>https://arebya.github.io/2018/03/27/threadlocal/</loc>
     
     <lastmod>2018-10-26T07:26:10.024Z</lastmod>
     
@@ -101,13 +115,6 @@
   
   <url>
     <loc>https://arebya.github.io/2018/05/31/transaction/</loc>
-    
-    <lastmod>2018-10-26T07:26:10.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://arebya.github.io/2018/03/27/threadlocal/</loc>
     
     <lastmod>2018-10-26T07:26:10.024Z</lastmod>
     
