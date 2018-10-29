@@ -3,11 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[从socket api的几个方法看tcp机制]]></title>
+      <url>/2018/10/29/tcp-related/</url>
+      <content type="html"><![CDATA[<h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>在使用rpc框架时，设置socket参数时会使用到下面的api：<br>soccket.setReceiveBufferSize()<br>socket.setSendBufferSize()</p>
+<p>socket.setTcpNoDelay()<br>socket.setSoLinger()<br>socket.setSoTimeout()</p>
+<p>socket.setKeepAlive()<br>socket.setTrafficClass()<br>socket.setReuseAddress()<br>socket.setPerformancePreferences()</p>
+<p>这些参数对我们在进行网络编程时起到了什么作用，不同的参数设置会有什么影响程序的表现呢？</p>
+<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><h4 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h4><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h4 id="rpc框架中的使用"><a href="#rpc框架中的使用" class="headerlink" title="rpc框架中的使用"></a>rpc框架中的使用</h4>]]></content>
+      
+        
+        <tags>
+            
+            <tag> tcp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[算法和数据结构离我们有多远？]]></title>
       <url>/2018/10/27/algorithm/</url>
-      <content type="html"><![CDATA[<p>最近在看即刻时间的数据结构和算法课程，有种觉得太理论，脱离实际的感觉，想到如何才能跟工程结合起来呢？有没有一种比较系统的方式，能搜集一下基本的数据结构或者算法的应用cases呢？</p>
+      <content type="html"><![CDATA[<p>最近在看“极客时间”的数据结构和算法课程，隐隐有种觉得太理论，脱离实际的感觉，想到如何才能跟工程结合起来呢？有没有一种比较系统的方式，能搜集一下基本的数据结构或者算法的应用cases呢？</p>
 <p>在github上整理了一个项目<br><a href="https://github.com/arebya/algorithm-use-cases-in-production" target="_blank" rel="noopener">https://github.com/arebya/algorithm-use-cases-in-production</a></p>
-<p>项目主要目的是为了搜集整理一下，目前java语言工程领域一些和算法和数据结构相关的应用case，有了这些实际的案例，我们可以结合理论知识进行学习，每一个case也主要想去解释其应用场景，直观地体会到算法或者数据结构的魔力。</p>
+<p>项目主要目的是为了搜集整理一下目前java语言工程领域一些和算法和数据结构相关的应用case，有了这些实际的案例，我们可以结合理论知识进行学习，每一个case也主要想去解释其应用场景，直观地体会到算法或者数据结构的魔力。</p>
 <p>如果看到的你也感兴趣，欢迎参与进来。</p>
 ]]></content>
       
