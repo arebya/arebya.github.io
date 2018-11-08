@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="操作系统," />
+  <meta name="keywords" content="操作系统,snowflake," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。上图  它背后究竟蕴含着怎样的道理？难道手机有问题？到了2038年之后这手机怎么办？怎么解决这个问题？ 看看维基百科是怎么解释这个问题的 2038年问题  这么一想可能是多虑了，到那时候32位的系统还存在吗？ 著名的snowflake算法中，时间戳用41位表示，如果以1970年1月1日 0时0分0秒开始，作为起始时间，该">
-<meta name="keywords" content="操作系统">
+<meta name="keywords" content="操作系统,snowflake">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2038 问题">
 <meta property="og:url" content="https://arebya.github.io/2018/11/07/2038/index.html">
@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://arebya.github.io/img/2038_problem.jpg">
 <meta property="og:image" content="https://arebya.github.io/img/Year_2038_problem.gif">
-<meta property="og:updated_time" content="2018-11-08T08:08:49.191Z">
+<meta property="og:updated_time" content="2018-11-08T11:52:20.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2038 问题">
 <meta name="twitter:description" content="生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。上图  它背后究竟蕴含着怎样的道理？难道手机有问题？到了2038年之后这手机怎么办？怎么解决这个问题？ 看看维基百科是怎么解释这个问题的 2038年问题  这么一想可能是多虑了，到那时候32位的系统还存在吗？ 著名的snowflake算法中，时间戳用41位表示，如果以1970年1月1日 0时0分0秒开始，作为起始时间，该">
@@ -190,6 +190,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -320,7 +330,7 @@
 <p>看看维基百科是怎么解释这个问题的 <a href="https://zh.wikipedia.org/wiki/2038%E5%B9%B4%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">2038年问题</a></p>
 <p><img src="/img/Year_2038_problem.gif" alt="&quot;倒计时&quot;"></p>
 <p>这么一想可能是多虑了，到那时候32位的系统还存在吗？</p>
-<p>著名的snowflake算法中，时间戳用41位表示，如果以1970年1月1日 0时0分0秒开始，作为起始时间，该算法最长能用的时间为： (1L &lt;&lt; 41) / (1000L <em> 60 </em> 60 <em> 24 </em> 365) = 69年</p>
+<p>著名的snowflake算法中，时间戳用41位表示，如果以1970年1月1日 0时0分0秒开始，作为起始时间，该算法最长能用的时间为： (1L &lt;&lt; 41) / (1000L * 60 * 60 * 24 * 365) = 69年</p>
 <p>但实际上我们的开始时间应该不会设置为默认的，也就是说中间41位的数值时由<b>当前时间—起始时间</b>形成的差值。</p>
 
       
@@ -340,6 +350,8 @@
         <div class="post-tags">
           
             <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+          
+            <a href="/tags/snowflake/" rel="tag"># snowflake</a>
           
         </div>
       
@@ -441,7 +453,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
