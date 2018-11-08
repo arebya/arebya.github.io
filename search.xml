@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[2038 问题]]></title>
       <url>/2018/11/07/2038/</url>
-      <content type="html"><![CDATA[<p>生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。上图</p>
+      <content type="html"><![CDATA[<p>生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。<a id="more"></a>上图</p>
 <p><img src="/img/2038_problem.jpg" alt="&quot;2038&quot;"></p>
 <p>它背后究竟蕴含着怎样的道理？难道手机有问题？到了2038年之后这手机怎么办？怎么解决这个问题？</p>
 <p>看看维基百科是怎么解释这个问题的 <a href="https://zh.wikipedia.org/wiki/2038%E5%B9%B4%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">2038年问题</a></p>
@@ -31,7 +31,7 @@
       <url>/2018/10/29/tcp-related/</url>
       <content type="html"><![CDATA[<h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>在使用rpc框架时，设置socket参数时会使用到下面的api：</p>
 <p>soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小</p>
-<p>socket.setSendBufferSize()———-设置发送数据的缓冲区大小</p>
+<p>socket.setSendBufferSize()———-设置发送数据的缓冲区大小<br><a id="more"></a></p>
 <p>socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭</p>
 <p>socket.setSoLinger()—————-close socket时 发送队列如何处理数据，丢弃或者继续发送，通常需要关闭，保持默认行为，由系统接管保证发送数据完成</p>
 <p>socket.setSoTimeout()—————对于服务端来说，accept空等客户端连接超过则异常，对于客户端来说，read读数据流取数据最长等待时间，超过则异常</p>
@@ -582,12 +582,6 @@
   
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[categories]]></title>
       <url>/categories/index.html</url>
       <content type="html"></content>
@@ -596,6 +590,12 @@
     <entry>
       <title><![CDATA[tags]]></title>
       <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
       <content type="html"></content>
     </entry>
     

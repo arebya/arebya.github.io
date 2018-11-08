@@ -323,17 +323,14 @@
 
       
         
-          
-            <p>生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。上图</p>
-<p><img src="/img/2038_problem.jpg" alt="&quot;2038&quot;"></p>
-<p>它背后究竟蕴含着怎样的道理？难道手机有问题？到了2038年之后这手机怎么办？怎么解决这个问题？</p>
-<p>看看维基百科是怎么解释这个问题的 <a href="https://zh.wikipedia.org/wiki/2038%E5%B9%B4%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">2038年问题</a></p>
-<p><img src="/img/Year_2038_problem.gif" alt="&quot;倒计时&quot;"></p>
-<p>这么一想可能是多虑了，到那时候32位的系统还存在吗？</p>
-<p>著名的snowflake算法中，时间戳用41位表示，如果以1970年1月1日 0时0分0秒开始，作为起始时间，该算法最长能用的时间为： (1L &lt;&lt; 41) / (1000L * 60 * 60 * 24 * 365) = 69年</p>
-<p>但实际上我们的开始时间应该不会设置为默认的，也就是说中间41位的数值时由<b>当前时间—起始时间</b>形成的差值。</p>
-
-          
+          <p>生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/07/2038/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -461,36 +458,16 @@
 
       
         
-          
-            <h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>在使用rpc框架时，设置socket参数时会使用到下面的api：</p>
+          <h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>在使用rpc框架时，设置socket参数时会使用到下面的api：</p>
 <p>soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小</p>
-<p>socket.setSendBufferSize()———-设置发送数据的缓冲区大小</p>
-<p>socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭</p>
-<p>socket.setSoLinger()—————-close socket时 发送队列如何处理数据，丢弃或者继续发送，通常需要关闭，保持默认行为，由系统接管保证发送数据完成</p>
-<p>socket.setSoTimeout()—————对于服务端来说，accept空等客户端连接超过则异常，对于客户端来说，read读数据流取数据最长等待时间，超过则异常</p>
-<p>socket.setKeepAlive()—————默认的心跳保活机制，但在连接双方ESTABLISEHED之后两个小时左右上层没有数据传输的情况下，才会起作用。一般应用不使用此机制，需要自己做保活机制</p>
-<p>socket.setTrafficClass()————IP_TOS,设置服务类型，共四种：IPTOS_LOWCOST，IPTOS_RELIABILITY，IPTOS_THROUGHPUT，IPTOS_LOWDELAY，可组合使用</p>
-<p>socket.setReuseAddress()————是否重用处于TIME_WAIT状态的地址</p>
-<p>socket.setPerformancePreferences(connectionTime,latency,bandwidth)—设置低连接时间/低延迟/高带宽相对的优先级</p>
-<p>ServerSocket backlog—————-服务端请求处理线程满时，临时存放已完成三次握手的请求队列的长度，默认50</p>
-<p>这些参数对我们在进行网络编程时起到了什么作用，不同的参数设置会有什么影响程序的表现呢？</p>
-<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>针对网络全局行的控制，主要为了防止网络链路出现过载，导致出现网络吞吐量由于负荷增大而下降的情况。</p>
-<h4 id="慢开始与拥塞避免"><a href="#慢开始与拥塞避免" class="headerlink" title="慢开始与拥塞避免"></a>慢开始与拥塞避免</h4><p><img src="/img/tcp_slow_start.jpeg" alt="&quot;慢开始&quot;"></p>
-<h4 id="快重传-amp-快恢复"><a href="#快重传-amp-快恢复" class="headerlink" title="快重传&amp;快恢复"></a>快重传&amp;快恢复</h4><p><img src="/img/tcp_fast_retransmission.jpeg" alt="&quot;快重传&quot;"></p>
-<p><img src="/img/tcp_fast_recovery.jpeg" alt="&quot;快恢复&quot;"></p>
-<h3 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h3><p>针对点对点通信质量的控制，利用滑动窗口实现在TCP连接上对发送方发送速率的控制，控制流量，是得自己能够及时接收数据</p>
-<p><img src="/img/tcp_flow_control.jpeg" alt="&quot;滑动窗口&quot;"></p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="rpc框架中的使用"><a href="#rpc框架中的使用" class="headerlink" title="rpc框架中的使用"></a>rpc框架中的使用</h3><p>目前大部分的rpc framework大多采用netty中支持的tcp协议套件来进行包装开发，避免传统nio+socket这一层级的复杂操作，但最终还是作用于ServerSocket和Socket上。但具体各自框架为什么选择或者不选择设置某些选项，是需要仔细考究的点（后续补充）。</p>
-<h4 id="dubbo"><a href="#dubbo" class="headerlink" title="dubbo"></a>dubbo</h4><p>server端(NettyServer)ServerSocketChannelConfig根据目标操作系统会有不同的实现</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bootstrap.group(bossGroup, workerGroup)</span><br><span class="line">        .channel(NioServerSocketChannel.class)</span><br><span class="line">        .childOption(ChannelOption.TCP_NODELAY, Boolean.TRUE) <span class="comment">// 开启TCP_NODELAY</span></span><br><span class="line">        .childOption(ChannelOption.SO_REUSEADDR, Boolean.TRUE) <span class="comment">// 开启 SO_REUSEADDR</span></span><br><span class="line">        .childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)</span><br><span class="line">        .childHandler(<span class="keyword">new</span> ChannelInitializer&lt;NioSocketChannel&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initChannel</span><span class="params">(NioSocketChannel ch)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">                NettyCodecAdapter adapter = <span class="keyword">new</span> NettyCodecAdapter(getCodec(), getUrl(), NettyServer.<span class="keyword">this</span>);</span><br><span class="line">                ch.pipeline()<span class="comment">//.addLast("logging",new LoggingHandler(LogLevel.INFO))//for debug</span></span><br><span class="line">                        .addLast(<span class="string">"decoder"</span>, adapter.getDecoder())</span><br><span class="line">                        .addLast(<span class="string">"encoder"</span>, adapter.getEncoder())</span><br><span class="line">                        .addLast(<span class="string">"handler"</span>, nettyServerHandler);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-<p>client端(NettyClient) SocketChannelConfig 根据操作系统的实现会有不同</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.group(nioEventLoopGroup)</span><br><span class="line">                .option(ChannelOption.SO_KEEPALIVE, <span class="keyword">true</span>)  <span class="comment">//开启keepalive</span></span><br><span class="line">                .option(ChannelOption.TCP_NODELAY, <span class="keyword">true</span>)   <span class="comment">//开启TCP_NODELAY</span></span><br><span class="line">                .option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)</span><br><span class="line">                <span class="comment">//.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, getTimeout())</span></span><br><span class="line">                .channel(NioSocketChannel.class);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (getConnectTimeout() &lt; <span class="number">3000</span>) &#123;.  <span class="comment">// 设置</span></span><br><span class="line">            bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, <span class="number">3000</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, getConnectTimeout());</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="sofa-rpc"><a href="#sofa-rpc" class="headerlink" title="sofa-rpc"></a>sofa-rpc</h4><p>server端（RpcServer）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.bootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)</span><br><span class="line">          .option(ChannelOption.SO_BACKLOG, SystemProperties.tcp_so_backlog())</span><br><span class="line">          .option(ChannelOption.SO_REUSEADDR, SystemProperties.tcp_so_reuseaddr())</span><br><span class="line">          .childOption(ChannelOption.TCP_NODELAY, SystemProperties.tcp_nodelay())</span><br><span class="line">          .childOption(ChannelOption.SO_KEEPALIVE, SystemProperties.tcp_so_keepalive());</span><br></pre></td></tr></table></figure>
-<p>client端（RpcConnectionFactory）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.group(workerGroup).channel(NioSocketChannel.class)</span><br><span class="line">            .option(ChannelOption.TCP_NODELAY, SystemProperties.tcp_nodelay())</span><br><span class="line">            .option(ChannelOption.SO_REUSEADDR, SystemProperties.tcp_so_reuseaddr())</span><br><span class="line">            .option(ChannelOption.SO_KEEPALIVE, SystemProperties.tcp_so_keepalive());</span><br></pre></td></tr></table></figure>
-
-          
+<p>socket.setSendBufferSize()———-设置发送数据的缓冲区大小<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/29/tcp-related/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

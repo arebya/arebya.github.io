@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
+<meta name="description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小">
 <meta name="keywords" content="tcp,netty">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从socket api的几个方法看tcp机制">
 <meta property="og:url" content="https://arebya.github.io/2018/10/29/tcp-related/index.html">
 <meta property="og:site_name" content="arebya的博客">
-<meta property="og:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
+<meta property="og:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://arebya.github.io/img/tcp_slow_start.jpeg">
 <meta property="og:image" content="https://arebya.github.io/img/tcp_fast_retransmission.jpeg">
 <meta property="og:image" content="https://arebya.github.io/img/tcp_fast_recovery.jpeg">
 <meta property="og:image" content="https://arebya.github.io/img/tcp_flow_control.jpeg">
-<meta property="og:updated_time" content="2018-11-08T11:54:56.902Z">
+<meta property="og:updated_time" content="2018-11-08T12:22:11.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从socket api的几个方法看tcp机制">
-<meta name="twitter:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
+<meta name="twitter:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小">
 <meta name="twitter:image" content="https://arebya.github.io/img/tcp_slow_start.jpeg">
 
 
@@ -328,7 +328,7 @@
       
         <h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>在使用rpc框架时，设置socket参数时会使用到下面的api：</p>
 <p>soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小</p>
-<p>socket.setSendBufferSize()———-设置发送数据的缓冲区大小</p>
+<p>socket.setSendBufferSize()———-设置发送数据的缓冲区大小<br><a id="more"></a></p>
 <p>socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭</p>
 <p>socket.setSoLinger()—————-close socket时 发送队列如何处理数据，丢弃或者继续发送，通常需要关闭，保持默认行为，由系统接管保证发送数据完成</p>
 <p>socket.setSoTimeout()—————对于服务端来说，accept空等客户端连接超过则异常，对于客户端来说，read读数据流取数据最长等待时间，超过则异常</p>
