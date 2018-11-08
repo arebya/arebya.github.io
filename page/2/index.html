@@ -232,6 +232,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://arebya.github.io/2018/03/30/mysql-conversion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="arebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="arebya的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/30/mysql-conversion/" itemprop="url">mysql_conversion</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T19:28:00+08:00">
+                2018-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/30/mysql-conversion/" class="leancloud_visitors" data-flag-title="mysql_conversion">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h3><h4 id="数据类型字段"><a href="#数据类型字段" class="headerlink" title="数据类型字段"></a>数据类型字段</h4><p>如果以数字开关的，后面的字符将被截断，只取前面的数字值，如果不以数字开关的将被置为0</p>
+<p>table表中的columnA字段为int类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=&apos;7788Ab&apos;</span><br></pre></td></tr></table></figure></p>
+<p>相当于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=7788</span><br></pre></td></tr></table></figure></p>
+<p>而<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=&apos;Ab7788&apos;</span><br></pre></td></tr></table></figure></p>
+<p>相当于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnA=0</span><br></pre></td></tr></table></figure></p>
+<h4 id="字符类型字段"><a href="#字符类型字段" class="headerlink" title="字符类型字段"></a>字符类型字段</h4><p>table表中的columnB字段为varchar类型,且有索引idx_columnB<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnB=&apos;7788Ab&apos;</span><br></pre></td></tr></table></figure></p>
+<p>可以正常使用索引<br>而<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where columnB=7788</span><br></pre></td></tr></table></figure></p>
+<p>发生隐式类型转换，不能使用索引</p>
+<h4 id="官方规则"><a href="#官方规则" class="headerlink" title="官方规则"></a>官方规则</h4><ul>
+<li>两个参数至少有一个是 NULL 时，比较的结果也是 NULL，例外是使用 &lt;=&gt; 对两个 NULL 做比较时会返回 1，这两种情况都不需要做类型转换</li>
+<li>两个参数都是字符串，会按照字符串来比较，不做类型转换</li>
+<li>两个参数都是整数，按照整数来比较，不做类型转换</li>
+<li>十六进制的值和非数字做比较时，会被当做二进制串</li>
+<li>有一个参数是 TIMESTAMP 或 DATETIME，并且另外一个参数是常量，常量会被转换为 timestamp</li>
+<li>有一个参数是 decimal 类型，如果另外一个参数是 decimal 或者整数，会将整数转换为 decimal 后进行比较，如果另外一个参数是浮点数，则会把 decimal 转换为浮点数进行比较</li>
+<li>所有其他情况下，两个参数都会被转换为浮点数再进行比较</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://arebya.github.io/2018/03/28/consistent-hash/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1448,172 +1595,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://arebya.github.io/2018/01/08/binary-in-computer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="arebya">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="arebya的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/08/binary-in-computer/" itemprop="url">计算机内部的数值存储</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T14:08:32+08:00">
-                2018-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/08/binary-in-computer/" class="leancloud_visitors" data-flag-title="计算机内部的数值存储">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<ul>
-<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%95%B0%E5%80%BC%E5%AD%98%E5%82%A8">计算机中的数值存储</a><ul>
-<li><a href="#%E6%9C%BA%E5%99%A8%E6%95%B0%E5%92%8C%E7%9C%9F%E5%80%BC">机器数和真值</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81">原码、反码、补码</a><ul>
-<li><a href="#%E5%8E%9F%E7%A0%81%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%981-1-2">原码有什么问题（1+（-1）=-2）</a></li>
-<li><a href="#%E5%8F%8D%E7%A0%81%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%981-1-0">反码有什么问题（1+（-1）=-0）</a></li>
-<li><a href="#%E8%A1%A5%E7%A0%81%E8%BF%90%E7%AE%97">补码运算</a></li>
-<li><a href="#%E8%A1%A5%E7%A0%81%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%BA%A2%E5%87%BA">补码表示的溢出</a></li>
-</ul>
-</li>
-</ul>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-<h3 id="计算机中的数值存储"><a href="#计算机中的数值存储" class="headerlink" title="计算机中的数值存储"></a>计算机中的数值存储</h3><h4 id="机器数和真值"><a href="#机器数和真值" class="headerlink" title="机器数和真值"></a>机器数和真值</h4><p>一个数在计算机中的二进制表示形式, 叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.</p>
-<p>比如，十进制中的数 +3 ，计算机字长为8位，转换成二进制就是00000011。如果是 -3 ，就是 10000011 。那么，这里的 00000011 和 10000011 就是机器数。</p>
-<h3 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h3><p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值。</p>
-<p>反码的表示方法是：正数的反码是其本身；的反码是在其原码的基础上, 符号位不变，其余各个位取反。</p>
-<p>补码的表示方法是：正数的补码就是其本身；的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)。</p>
-<h4 id="原码有什么问题（1-（-1）-2）"><a href="#原码有什么问题（1-（-1）-2）" class="headerlink" title="原码有什么问题（1+（-1）=-2）"></a>原码有什么问题（1+（-1）=-2）</h4><p>如果使用原码进行计算：<br>   1 - 1 = 1 + (-1) = [00000001]原 + [10000001]原 = [10000010]原 = -2</p>
-<p>问题：计算错误</p>
-<h4 id="反码有什么问题（1-（-1）-0）"><a href="#反码有什么问题（1-（-1）-0）" class="headerlink" title="反码有什么问题（1+（-1）=-0）"></a>反码有什么问题（1+（-1）=-0）</h4><p>如果使用反码进行计算：<br>   1 - 1 = 1 + (-1)<br>   = [0000 0001]原 + [1000 0001]原<br>   = [0000 0001]反 + [1111 1110]反<br>   = [1111 1111]反 = [1000 0000]原<br>   = -0<br>问题：0带符号是没有任何意义的，而且会有[0000 0000]原和[1000 0000]原两个编码表示0。</p>
-<h4 id="补码运算"><a href="#补码运算" class="headerlink" title="补码运算"></a>补码运算</h4><p>1-1 = 1 + (-1)<br>= [0000 0001]原 + [1000 0001]原<br>= [0000 0001]补 + [1111 1111]补<br>= [0000 0000]补=[0000 0000]原</p>
-<h4 id="补码表示的溢出"><a href="#补码表示的溢出" class="headerlink" title="补码表示的溢出"></a>补码表示的溢出</h4><p>由于计算机中的数字用补码表示，例如8bit的byte类型的表示范围为：</p>
-<p>[-128, 127]</p>
-<p>0 = [0000 0000]（补）</p>
-<p>-128 = [1000 0000]（补）</p>
-<p>127 = [0111 1111]（补）</p>
-<p>当byte类型的变量超上限127时，如：</p>
-<p>+128 = -（-128）= 127 + 1<br>= [1111 1111]（补）+ [0000 0001]（补）<br>= [1000 0000]（补）<br>= -128</p>
-<p>+129 = 127 + 2<br>= [1111 1111]（补）+ [0000 0001]（补）<br>= [1000 0001]（补）<br>= [1111 1111]（原）<br>= -127</p>
-<p>当byte类型的变量超过下限-128时：</p>
-<p>-129 = -128 - 1<br>= [1000 0000]（补) - [0000 0001]（补）<br>= [0111 1111]（补）<br>= 127</p>
-<p>-130 = -128 - 2<br>= [1000 0000]（补) - [0000 0010]（补）<br>= [0111 1110]（补）<br>= 126</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1664,7 +1645,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

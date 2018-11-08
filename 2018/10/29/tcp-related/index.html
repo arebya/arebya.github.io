@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api：soccket.setReceiveBufferSize()socket.setSendBufferSize() socket.setTcpNoDelay()socket.setSoLinger()socket.setSoTimeout() socket.setKeepAlive()socket.setTrafficClass">
+<meta name="description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
 <meta name="keywords" content="tcp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从socket api的几个方法看tcp机制">
 <meta property="og:url" content="https://arebya.github.io/2018/10/29/tcp-related/index.html">
 <meta property="og:site_name" content="arebya的博客">
-<meta property="og:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api：soccket.setReceiveBufferSize()socket.setSendBufferSize() socket.setTcpNoDelay()socket.setSoLinger()socket.setSoTimeout() socket.setKeepAlive()socket.setTrafficClass">
+<meta property="og:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-29T12:53:26.605Z">
+<meta property="og:updated_time" content="2018-11-08T04:01:29.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从socket api的几个方法看tcp机制">
-<meta name="twitter:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api：soccket.setReceiveBufferSize()socket.setSendBufferSize() socket.setTcpNoDelay()socket.setSoLinger()socket.setSoTimeout() socket.setKeepAlive()socket.setTrafficClass">
+<meta name="twitter:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
 
 
 
@@ -311,11 +311,20 @@
       
 
       
-        <h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>在使用rpc框架时，设置socket参数时会使用到下面的api：<br>soccket.setReceiveBufferSize()<br>socket.setSendBufferSize()</p>
-<p>socket.setTcpNoDelay()<br>socket.setSoLinger()<br>socket.setSoTimeout()</p>
-<p>socket.setKeepAlive()<br>socket.setTrafficClass()<br>socket.setReuseAddress()<br>socket.setPerformancePreferences()</p>
+        <h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>在使用rpc框架时，设置socket参数时会使用到下面的api：</p>
+<p>soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小</p>
+<p>socket.setSendBufferSize()———-设置发送数据的缓冲区大小</p>
+<p>socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭</p>
+<p>socket.setSoLinger()—————-close socket时 发送队列如何处理数据，丢弃或者继续发送，通常需要关闭，保持默认行为，由系统接管保证发送数据完成</p>
+<p>socket.setSoTimeout()—————对于服务端来说，accept空等客户端连接超过则异常，对于客户端来说，read读数据流取数据最长等待时间，超过则异常</p>
+<p>socket.setKeepAlive()—————默认的心跳保活机制，但在连接双方ESTABLISEHED之后两个小时左右上层没有数据传输的情况下，才会起作用。一般应用不使用此机制，需要自己做保活机制</p>
+<p>socket.setTrafficClass()————IP_TOS,设置服务类型，共四种：IPTOS_LOWCOST，IPTOS_RELIABILITY，IPTOS_THROUGHPUT，IPTOS_LOWDELAY，可组合使用</p>
+<p>socket.setReuseAddress()————是否重用处于TIME_WAIT状态的地址</p>
+<p>socket.setPerformancePreferences(connectionTime,latency,bandwidth)—设置低连接时间/低延迟/高带宽相对的优先级</p>
+<p>ServerSocket backlog—————-服务端请求处理线程满时，临时存放已完成三次握手的请求队列的长度，默认50</p>
 <p>这些参数对我们在进行网络编程时起到了什么作用，不同的参数设置会有什么影响程序的表现呢？</p>
-<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><h4 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h4><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h4 id="rpc框架中的使用"><a href="#rpc框架中的使用" class="headerlink" title="rpc框架中的使用"></a>rpc框架中的使用</h4>
+<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><h4 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h4><p>利用滑动窗口实现在TCP连接上对发送方发送速率的控制，控制流量，是得自己能够及时接收数据</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h4 id="rpc框架中的使用"><a href="#rpc框架中的使用" class="headerlink" title="rpc框架中的使用"></a>rpc框架中的使用</h4>
       
     </div>
     
@@ -354,6 +363,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/07/2038/" rel="prev" title="2038">
+                2038 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -430,7 +443,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
