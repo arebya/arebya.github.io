@@ -25,7 +25,12 @@
 <p>socket.setPerformancePreferences(connectionTime,latency,bandwidth)—设置低连接时间/低延迟/高带宽相对的优先级</p>
 <p>ServerSocket backlog—————-服务端请求处理线程满时，临时存放已完成三次握手的请求队列的长度，默认50</p>
 <p>这些参数对我们在进行网络编程时起到了什么作用，不同的参数设置会有什么影响程序的表现呢？</p>
-<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><h4 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h4><p>利用滑动窗口实现在TCP连接上对发送方发送速率的控制，控制流量，是得自己能够及时接收数据</p>
+<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><p>针对网络全局行的控制，主要为了防止网络链路出现过载，导致出现网络吞吐量由于负荷增大而下降的情况。</p>
+<h6 id="慢开始与拥塞避免"><a href="#慢开始与拥塞避免" class="headerlink" title="慢开始与拥塞避免"></a>慢开始与拥塞避免</h6><p><img src="/img/tcp_slow_start.jpeg" alt="&quot;慢开始&quot;"></p>
+<h6 id="快重传-amp-快恢复"><a href="#快重传-amp-快恢复" class="headerlink" title="快重传&amp;快恢复"></a>快重传&amp;快恢复</h6><p><img src="/img/tcp_fast_retransmission.jpeg" alt="&quot;快重传&quot;"></p>
+<p><img src="/img/tcp_fast_recovery.jpeg" alt="&quot;快恢复&quot;"></p>
+<h4 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h4><p>针对点对点通信质量的控制，利用滑动窗口实现在TCP连接上对发送方发送速率的控制，控制流量，是得自己能够及时接收数据</p>
+<p><img src="/img/tcp_flow_control.jpeg" alt="&quot;滑动窗口&quot;"></p>
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h4 id="rpc框架中的使用"><a href="#rpc框架中的使用" class="headerlink" title="rpc框架中的使用"></a>rpc框架中的使用</h4>]]></content>
       
         

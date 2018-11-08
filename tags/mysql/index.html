@@ -82,7 +82,7 @@
 <meta name="description" content="所有伟大的想法都不及一个小小的行动">
 <meta property="og:type" content="website">
 <meta property="og:title" content="arebya的博客">
-<meta property="og:url" content="https://arebya.github.io/tags/mysql/index.html">
+<meta property="og:url" content="https://arebya.github.io/tags/Mysql/index.html">
 <meta property="og:site_name" content="arebya的博客">
 <meta property="og:description" content="所有伟大的想法都不及一个小小的行动">
 <meta property="og:locale" content="zh-Hans">
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://arebya.github.io/tags/mysql/"/>
+  <link rel="canonical" href="https://arebya.github.io/tags/Mysql/"/>
 
 
 
 
 
-  <title>标签: mysql | arebya的博客</title>
+  <title>标签: Mysql | arebya的博客</title>
   
 
 
@@ -224,7 +224,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>mysql<small>标签</small>
+        <h1>Mysql<small>标签</small>
         </h1>
       </div>
 
@@ -236,9 +236,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/03/30/mysql-conversion/" itemprop="url">
+            <a class="post-title-link" href="/2018/04/09/mysql-index/" itemprop="url">
               
-                <span itemprop="name">mysql_conversion</span>
+                <span itemprop="name">mysql_index</span>
               
             </a>
         
@@ -246,9 +246,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-30T19:28:00+08:00"
-              content="2018-03-30" >
-          03-30
+              datetime="2018-04-09T19:05:35+08:00"
+              content="2018-04-09" >
+          04-09
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/03/27/mysql-hint-comment/" itemprop="url">
+              
+                <span itemprop="name">mysql_hint_comment</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-03-27T15:06:15+08:00"
+              content="2018-03-27" >
+          03-27
         </time>
       </div>
 
@@ -618,47 +646,6 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-sitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');

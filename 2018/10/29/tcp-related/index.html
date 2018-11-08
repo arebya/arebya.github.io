@@ -87,10 +87,15 @@
 <meta property="og:site_name" content="arebya的博客">
 <meta property="og:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T04:01:29.816Z">
+<meta property="og:image" content="https://arebya.github.io/img/tcp_slow_start.jpeg">
+<meta property="og:image" content="https://arebya.github.io/img/tcp_fast_retransmission.jpeg">
+<meta property="og:image" content="https://arebya.github.io/img/tcp_fast_recovery.jpeg">
+<meta property="og:image" content="https://arebya.github.io/img/tcp_flow_control.jpeg">
+<meta property="og:updated_time" content="2018-11-08T06:01:18.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从socket api的几个方法看tcp机制">
 <meta name="twitter:description" content="背景问题在使用rpc框架时，设置socket参数时会使用到下面的api： soccket.setReceiveBufferSize()——设置接受数据的缓冲区大小 socket.setSendBufferSize()———-设置发送数据的缓冲区大小 socket.setTcpNoDelay()————–是否开启Nagle算法，true开启，false关闭 socket.setSoLinger()—">
+<meta name="twitter:image" content="https://arebya.github.io/img/tcp_slow_start.jpeg">
 
 
 
@@ -323,7 +328,12 @@
 <p>socket.setPerformancePreferences(connectionTime,latency,bandwidth)—设置低连接时间/低延迟/高带宽相对的优先级</p>
 <p>ServerSocket backlog—————-服务端请求处理线程满时，临时存放已完成三次握手的请求队列的长度，默认50</p>
 <p>这些参数对我们在进行网络编程时起到了什么作用，不同的参数设置会有什么影响程序的表现呢？</p>
-<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><h4 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h4><p>利用滑动窗口实现在TCP连接上对发送方发送速率的控制，控制流量，是得自己能够及时接收数据</p>
+<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><p>针对网络全局行的控制，主要为了防止网络链路出现过载，导致出现网络吞吐量由于负荷增大而下降的情况。</p>
+<h6 id="慢开始与拥塞避免"><a href="#慢开始与拥塞避免" class="headerlink" title="慢开始与拥塞避免"></a>慢开始与拥塞避免</h6><p><img src="/img/tcp_slow_start.jpeg" alt="&quot;慢开始&quot;"></p>
+<h6 id="快重传-amp-快恢复"><a href="#快重传-amp-快恢复" class="headerlink" title="快重传&amp;快恢复"></a>快重传&amp;快恢复</h6><p><img src="/img/tcp_fast_retransmission.jpeg" alt="&quot;快重传&quot;"></p>
+<p><img src="/img/tcp_fast_recovery.jpeg" alt="&quot;快恢复&quot;"></p>
+<h4 id="滑动窗口-amp-流量控制"><a href="#滑动窗口-amp-流量控制" class="headerlink" title="滑动窗口&amp;流量控制"></a>滑动窗口&amp;流量控制</h4><p>针对点对点通信质量的控制，利用滑动窗口实现在TCP连接上对发送方发送速率的控制，控制流量，是得自己能够及时接收数据</p>
+<p><img src="/img/tcp_flow_control.jpeg" alt="&quot;滑动窗口&quot;"></p>
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h4 id="rpc框架中的使用"><a href="#rpc框架中的使用" class="headerlink" title="rpc框架中的使用"></a>rpc框架中的使用</h4>
       
     </div>
@@ -489,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景问题"><span class="nav-number">1.</span> <span class="nav-text">背景问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tcp协议"><span class="nav-number">2.</span> <span class="nav-text">tcp协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拥塞控制"><span class="nav-number">2.0.1.</span> <span class="nav-text">拥塞控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#滑动窗口-amp-流量控制"><span class="nav-number">2.0.2.</span> <span class="nav-text">滑动窗口&amp;流量控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rpc框架中的使用"><span class="nav-number">3.0.1.</span> <span class="nav-text">rpc框架中的使用</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景问题"><span class="nav-number">1.</span> <span class="nav-text">背景问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tcp协议"><span class="nav-number">2.</span> <span class="nav-text">tcp协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拥塞控制"><span class="nav-number">2.0.1.</span> <span class="nav-text">拥塞控制</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#慢开始与拥塞避免"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">慢开始与拥塞避免</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#快重传-amp-快恢复"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">快重传&amp;快恢复</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#滑动窗口-amp-流量控制"><span class="nav-number">2.0.2.</span> <span class="nav-text">滑动窗口&amp;流量控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rpc框架中的使用"><span class="nav-number">3.0.1.</span> <span class="nav-text">rpc框架中的使用</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
