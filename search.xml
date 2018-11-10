@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title><![CDATA[service mesh业界实施案例汇总（不断更新）]]></title>
+      <url>/2018/11/10/page/</url>
+      <content type="html"><![CDATA[<h2 id="唯品会Service-Mesh实践"><a href="#唯品会Service-Mesh实践" class="headerlink" title="唯品会Service Mesh实践"></a>唯品会Service Mesh实践</h2><p><a href="https://mp.weixin.qq.com/s/re0InB7kt3T2fZLnJqpixA" target="_blank" rel="noopener">江南白衣大神的文章</a></p>
+<h2 id="华为公有云Service-Mesh"><a href="#华为公有云Service-Mesh" class="headerlink" title="华为公有云Service Mesh"></a>华为公有云Service Mesh</h2><p><a href="https://servicecomb.incubator.apache.org/assets/slides/20171209/PracticeOfServiceMeshOnHuaweiPublicCloud.pdf" target="_blank" rel="noopener">service mesh在华为云的实践</a></p>
+<p><a href="https://mp.weixin.qq.com/s/TfarMh2nHJJmq7ZteT7J3Q" target="_blank" rel="noopener">商用service mesh设计之道</a></p>
+<h2 id="蚂蚁金服service-mesh探索"><a href="#蚂蚁金服service-mesh探索" class="headerlink" title="蚂蚁金服service mesh探索"></a>蚂蚁金服service mesh探索</h2><p><a href="http://www.servicemesher.com/blog/the-way-to-service-mesh-in-ant-financial/" target="_blank" rel="noopener">蚂蚁金服大规模微服务架构下的service mesh探索之路</a></p>
+<p>以及</p>
+<p><a href="https://jimmysong.io/" target="_blank" rel="noopener">Jimmy Song的博客</a></p>
+<p>和</p>
+<p><a href="http://www.servicemesher.com/" target="_blank" rel="noopener">service mesh官方社区</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> service mesh </tag>
+            
+            <tag> 微服务 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[2038 问题]]></title>
       <url>/2018/11/07/2038/</url>
       <content type="html"><![CDATA[<p>生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。<a id="more"></a>上图</p>
@@ -588,14 +612,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
