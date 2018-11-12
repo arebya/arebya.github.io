@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tcp on arebya</title>
-    <link>http://arebya.com/tags/tcp/</link>
+    <link>https://arebya.com/tags/tcp/</link>
     <description>Recent content in Tcp on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Mon, 29 Oct 2018 20:37:21 +0000</lastBuildDate>
     
-	<atom:link href="http://arebya.com/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://arebya.com/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>从socket api的几个方法看tcp机制</title>
-      <link>http://arebya.com/post/tcp-related/</link>
+      <link>https://arebya.com/post/tcp-related/</link>
       <pubDate>Mon, 29 Oct 2018 20:37:21 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/tcp-related/</guid>
+      <guid>https://arebya.com/post/tcp-related/</guid>
       <description>&lt;h2 id=&#34;背景问题&#34;&gt;背景问题&lt;/h2&gt;
 
 &lt;p&gt;在使用rpc框架时，设置socket参数时会使用到下面的api：&lt;/p&gt;

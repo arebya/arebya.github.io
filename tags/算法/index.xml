@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on arebya</title>
-    <link>http://arebya.com/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://arebya.com/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,34 +10,34 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Sat, 27 Oct 2018 17:42:45 +0000</lastBuildDate>
     
-	<atom:link href="http://arebya.com/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://arebya.com/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>算法和数据结构离我们有多远？</title>
-      <link>http://arebya.com/post/algorithm/</link>
+      <link>https://arebya.com/post/algorithm/</link>
       <pubDate>Sat, 27 Oct 2018 17:42:45 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/algorithm/</guid>
+      <guid>https://arebya.com/post/algorithm/</guid>
       <description>&lt;p&gt;最近在看“极客时间”的数据结构和算法课程，隐隐有种觉得太理论，脱离实际的感觉，想到如何才能跟工程结合起来呢？有没有一种比较系统的方式，能搜集一下基本的数据结构或者算法的应用cases呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>关键词匹配问题</title>
-      <link>http://arebya.com/post/unsolved-problem-1/</link>
+      <link>https://arebya.com/post/unsolved-problem-1/</link>
       <pubDate>Wed, 16 May 2018 19:57:47 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/unsolved-problem-1/</guid>
+      <guid>https://arebya.com/post/unsolved-problem-1/</guid>
       <description>问题背景：
 针对一个大的文本文件，如何根据给定的关键词字典进行快速匹配并标红</description>
     </item>
     
     <item>
       <title>动态规划</title>
-      <link>http://arebya.com/post/dynamic-programming/</link>
+      <link>https://arebya.com/post/dynamic-programming/</link>
       <pubDate>Thu, 25 Jan 2018 16:43:02 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/dynamic-programming/</guid>
+      <guid>https://arebya.com/post/dynamic-programming/</guid>
       <description> 原文转自：http://www.sohu.com/a/153858619_466939
 问题 题目1：
 有一座高度是10级台阶的楼梯，从下往上走，每跨一步只能向上1级或者2级台阶。要求用程序来求出一共有多少种走法。

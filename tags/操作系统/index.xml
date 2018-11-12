@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>操作系统 on arebya</title>
-    <link>http://arebya.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+    <link>https://arebya.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
     <description>Recent content in 操作系统 on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,24 +10,24 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Wed, 07 Nov 2018 11:55:12 +0000</lastBuildDate>
     
-	<atom:link href="http://arebya.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://arebya.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2038 问题</title>
-      <link>http://arebya.com/post/2038/</link>
+      <link>https://arebya.com/post/2038/</link>
       <pubDate>Wed, 07 Nov 2018 11:55:12 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/2038/</guid>
+      <guid>https://arebya.com/post/2038/</guid>
       <description>&lt;p&gt;生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>大小端问题</title>
-      <link>http://arebya.com/post/little-big-endian/</link>
+      <link>https://arebya.com/post/little-big-endian/</link>
       <pubDate>Fri, 19 Jan 2018 14:44:31 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/little-big-endian/</guid>
+      <guid>https://arebya.com/post/little-big-endian/</guid>
       <description>背景 计算机系统中内存是以字节为单位进行编址的，每个地址单元都唯一的对应着1个字节（8 bit）。这可以应对char类型数据的存储要求，因为char类型长度刚好是1个字节，但是有些类型的长度是超过1个字节的（字符串虽然是多字节的，但它本质是由一个个char类型组成的类似数组的结构而已），比如C/C++中，short类型一般是2个字节，int类型一般4个字节等。因此这里就存在着一个如何安排多个字节数据中各字节存放顺序的问题。正是因为不同的安排顺序导致了大端存储模式和小端存储模式的存在。
 定义 假如有一个4字节的数据为 0x12 34 56 78（十进制：305419896，0x12为高字节，0x78为低字节），若将其存放于地址 0x4000 8000中，则有：
 内存地址 0x4000 8000（低地址） 0x4000 8001 0x4000 8002 0x4000 8003（高地址） 大端模式 0x12（高字节） 0x34 0x56 0x78（低字节） 小端模式 0x78（低字节） 0x56 0x34 0x12（高字节）

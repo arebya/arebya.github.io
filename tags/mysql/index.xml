@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on arebya</title>
-    <link>http://arebya.com/tags/mysql/</link>
+    <link>https://arebya.com/tags/mysql/</link>
     <description>Recent content in Mysql on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Mon, 09 Apr 2018 19:05:35 +0000</lastBuildDate>
     
-	<atom:link href="http://arebya.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://arebya.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mysql_index</title>
-      <link>http://arebya.com/post/mysql-index/</link>
+      <link>https://arebya.com/post/mysql-index/</link>
       <pubDate>Mon, 09 Apr 2018 19:05:35 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/mysql-index/</guid>
+      <guid>https://arebya.com/post/mysql-index/</guid>
       <description>以下内容基于mysql innodb引擎
 索引数据结构 #### B-tree
 #### B+tree
@@ -35,10 +35,10 @@
     
     <item>
       <title>mysql_conversion</title>
-      <link>http://arebya.com/post/mysql-conversion/</link>
+      <link>https://arebya.com/post/mysql-conversion/</link>
       <pubDate>Fri, 30 Mar 2018 19:28:00 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/mysql-conversion/</guid>
+      <guid>https://arebya.com/post/mysql-conversion/</guid>
       <description> 隐式类型转换 数据类型字段 如果以数字开关的，后面的字符将被截断，只取前面的数字值，如果不以数字开关的将被置为0
 table表中的columnA字段为int类型
 select * from table where columnA=&#39;7788Ab&#39;  相当于
@@ -52,10 +52,10 @@ select * from table where columnB=7788  发生隐式类型转换，不能使用�
     
     <item>
       <title>mysql_hint_comment</title>
-      <link>http://arebya.com/post/mysql-hint-comment/</link>
+      <link>https://arebya.com/post/mysql-hint-comment/</link>
       <pubDate>Tue, 27 Mar 2018 15:06:15 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/mysql-hint-comment/</guid>
+      <guid>https://arebya.com/post/mysql-hint-comment/</guid>
       <description>Mysql 语法 comment https://dev.mysql.com/doc/refman/5.7/en/comments.html
 hint 应用 Cobar中的应用 https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/hint/PartitionOperandHintParser.java
 https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/ServerRouter.java

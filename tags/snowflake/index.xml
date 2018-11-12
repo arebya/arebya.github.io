@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Snowflake on arebya</title>
-    <link>http://arebya.com/tags/snowflake/</link>
+    <link>https://arebya.com/tags/snowflake/</link>
     <description>Recent content in Snowflake on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Wed, 07 Nov 2018 11:55:12 +0000</lastBuildDate>
     
-	<atom:link href="http://arebya.com/tags/snowflake/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://arebya.com/tags/snowflake/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2038 问题</title>
-      <link>http://arebya.com/post/2038/</link>
+      <link>https://arebya.com/post/2038/</link>
       <pubDate>Wed, 07 Nov 2018 11:55:12 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/2038/</guid>
+      <guid>https://arebya.com/post/2038/</guid>
       <description>&lt;p&gt;生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。&lt;/p&gt;</description>
     </item>
     

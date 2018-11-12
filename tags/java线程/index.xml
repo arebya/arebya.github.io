@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java线程 on arebya</title>
-    <link>http://arebya.com/tags/java%E7%BA%BF%E7%A8%8B/</link>
+    <link>https://arebya.com/tags/java%E7%BA%BF%E7%A8%8B/</link>
     <description>Recent content in Java线程 on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Tue, 27 Mar 2018 15:44:32 +0000</lastBuildDate>
     
-	<atom:link href="http://arebya.com/tags/java%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://arebya.com/tags/java%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>threadlocal</title>
-      <link>http://arebya.com/post/threadlocal/</link>
+      <link>https://arebya.com/post/threadlocal/</link>
       <pubDate>Tue, 27 Mar 2018 15:44:32 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/threadlocal/</guid>
+      <guid>https://arebya.com/post/threadlocal/</guid>
       <description>ThreadLocal public class RawRunnableTest { @Test public void testRawInheritableThreadLocal() throws InterruptedException { final ThreadLocal&amp;lt;Span&amp;gt; threadLocal = new ThreadLocal&amp;lt;&amp;gt;(); threadLocal.set(new Span(&amp;quot;xiexiexie&amp;quot;)); //输出 xiexiexie Object o = threadLocal.get(); Runnable runnable = new Runnable() { @Override public void run() { System.out.println(threadLocal.get() + &amp;quot;thead-&amp;quot; + Thread.currentThread()); threadLocal.set(new Span(&amp;quot;zhangzhangzhang1&amp;quot;)); System.out.println(threadLocal.get() + &amp;quot;thead-&amp;quot; + Thread.currentThread()); } }; Runnable runnable2 = new Runnable() { @Override public void run() { System.out.println(threadLocal.get() + &amp;quot;thead-&amp;quot; + Thread.currentThread()); threadLocal.set(new Span(&amp;quot;zhangzhangzhang2&amp;quot;)); System.</description>
     </item>
     

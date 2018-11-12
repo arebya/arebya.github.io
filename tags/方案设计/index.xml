@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>方案设计 on arebya</title>
-    <link>http://arebya.com/tags/%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1/</link>
+    <link>https://arebya.com/tags/%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1/</link>
     <description>Recent content in 方案设计 on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,45 +10,45 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Wed, 16 May 2018 20:05:32 +0000</lastBuildDate>
     
-	<atom:link href="http://arebya.com/tags/%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://arebya.com/tags/%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>计数问题</title>
-      <link>http://arebya.com/post/unsolved-problem-5/</link>
+      <link>https://arebya.com/post/unsolved-problem-5/</link>
       <pubDate>Wed, 16 May 2018 20:05:32 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/unsolved-problem-5/</guid>
+      <guid>https://arebya.com/post/unsolved-problem-5/</guid>
       <description>问题背景：
 实现可扩展高可用的计数系统，满足不同业务的计数需求，并可提供简单的统计功能。如访问pv、uv的分时统计等 或微博的实时评论、转发、关注数等  </description>
     </item>
     
     <item>
       <title>抢购系统</title>
-      <link>http://arebya.com/post/unsolved-problem-4/</link>
+      <link>https://arebya.com/post/unsolved-problem-4/</link>
       <pubDate>Wed, 16 May 2018 20:04:52 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/unsolved-problem-4/</guid>
+      <guid>https://arebya.com/post/unsolved-problem-4/</guid>
       <description>问题背景：
 完整的抢购系统方案  </description>
     </item>
     
     <item>
       <title>ID生成器</title>
-      <link>http://arebya.com/post/unsolved-problem-3/</link>
+      <link>https://arebya.com/post/unsolved-problem-3/</link>
       <pubDate>Wed, 16 May 2018 20:02:32 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/unsolved-problem-3/</guid>
+      <guid>https://arebya.com/post/unsolved-problem-3/</guid>
       <description>问题背景：
 针对系统中不同的ID生成需求，设计通用的ID生成系统，保证高可用和性能。有序无序？可否反解？承载能力？  </description>
     </item>
     
     <item>
       <title>全局限流问题</title>
-      <link>http://arebya.com/post/unsolved-problem-2/</link>
+      <link>https://arebya.com/post/unsolved-problem-2/</link>
       <pubDate>Wed, 16 May 2018 19:59:44 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>http://arebya.com/post/unsolved-problem-2/</guid>
+      <guid>https://arebya.com/post/unsolved-problem-2/</guid>
       <description>问题背景：
 如何设计通用的全局限流方案，实现可配置的接口、总体限流？  </description>
     </item>

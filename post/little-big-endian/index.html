@@ -30,14 +30,14 @@
     "@type": "WebSite",
     "name": "arebya",
     
-    "url": "http://arebya.com"
+    "url": "https://arebya.com"
 }
 </script><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Organization",
   "name": "",
-  "url": "http://arebya.com"
+  "url": "https://arebya.com"
   
   
   
@@ -52,14 +52,14 @@
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@id": "http://arebya.com",
+          "@id": "https://arebya.com",
           "name": "home"
         }
     },{
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "http://arebya.com/post/little-big-endian/",
+          "@id": "https://arebya.com/post/little-big-endian/",
           "name": "大小端问题"
         }
     }]
@@ -83,15 +83,15 @@
   "wordCount": 39,
   "datePublished" : "2018-01-19T14:44:31",
   "dateModified" : "2018-01-19T14:44:31",
-  "image" : "http://arebya.com/img/avatar-icon.png",
+  "image" : "https://arebya.com/img/avatar-icon.png",
   "keywords" : [ "操作系统" ],
-  "mainEntityOfPage" : "http://arebya.com/post/little-big-endian/",
+  "mainEntityOfPage" : "https://arebya.com/post/little-big-endian/",
   "publisher" : {
     "@type": "Organization",
-    "name" : "http://arebya.com",
+    "name" : "https://arebya.com",
     "logo" : {
         "@type" : "ImageObject",
-        "url" : "http://arebya.com/img/avatar-icon.png",
+        "url" : "https://arebya.com/img/avatar-icon.png",
         "height" :  60 ,
         "width" :  60
     }
@@ -107,30 +107,30 @@
 小端模式优点：
 1. 内存的低地址处存放低字节，所以在强制转换数据时不需要调整字节的内容（注解：比如把int的4字节强制转换成short的2字节时，就直接把int数据存储的前两个字节给short就行，因为其前两个字节刚好就是最低的两个字节，符合转换逻辑）；
 2. CPU做数值运算时从内存中依顺序依次从低位到高位取数据进行运算，直到最后刷新最高位的符号位，这样的运算方式会更高效">
-<meta property="og:image" content="http://arebya.com/img/avatar-icon.png" />
-<meta property="og:url" content="http://arebya.com/post/little-big-endian/" />
+<meta property="og:image" content="https://arebya.com/img/avatar-icon.png" />
+<meta property="og:url" content="https://arebya.com/post/little-big-endian/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="arebya" />
   <meta name="twitter:title" content="大小端问题" />
   <meta name="twitter:description" content="背景 计算机系统中内存是以字节为单位进行编址的，每个地址单元都唯一的对应着1个字节（8 bit）。这可以应对char类型数据的存储要求，因为char类型长度刚好是1个字节，但是有些类型的长度是超过1个字节的（字符串虽然是多字节的，但它本质是由一个个char类型组成的类似数组的结构而已），比如C/C&#43;&#43;中，short类型一般是2个字节，int类型一般4个字节等。因此这里就存在着一个如何安排多个字节数 …">
-  <meta name="twitter:image" content="http://arebya.com/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://arebya.com/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <link href='http://arebya.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta property="og:image" content="http://arebya.com/img/avatar-icon.png" />
-  <meta name="twitter:image" content="http://arebya.com/img/avatar-icon.png" />
+  <link href='https://arebya.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://arebya.com/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://arebya.com/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="http://arebya.com/post/little-big-endian/" />
+  <meta property="og:url" content="https://arebya.com/post/little-big-endian/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="arebya" />
 
   <meta name="generator" content="Hugo 0.51" />
-  <link rel="alternate" href="http://arebya.com/index.xml" type="application/rss+xml" title="arebya">
+  <link rel="alternate" href="https://arebya.com/index.xml" type="application/rss+xml" title="arebya">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="http://arebya.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://arebya.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="http://arebya.com/css/highlight.min.css" /><link rel="stylesheet" href="http://arebya.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://arebya.com/css/highlight.min.css" /><link rel="stylesheet" href="https://arebya.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
@@ -146,7 +146,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://arebya.com">arebya</a>
+      <a class="navbar-brand" href="https://arebya.com">arebya</a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
@@ -193,8 +193,8 @@
     
       <div class="avatar-container">
         <div class="avatar-img-border">
-          <a title="arebya" href="http://arebya.com">
-            <img class="avatar-img" src="http://arebya.com/img/avatar-icon.png" alt="arebya" />
+          <a title="arebya" href="https://arebya.com">
+            <img class="avatar-img" src="https://arebya.com/img/avatar-icon.png" alt="arebya" />
           </a>
         </div>
       </div>
@@ -335,7 +335,7 @@
         
           <div class="blog-tags">
             
-              <a href="http://arebya.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
+              <a href="https://arebya.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
             
           </div>
         
@@ -352,12 +352,12 @@
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="http://arebya.com/post/binary-in-computer/" data-toggle="tooltip" data-placement="top" title="计算机内部的数值存储">&larr; Previous Post</a>
+              <a href="https://arebya.com/post/binary-in-computer/" data-toggle="tooltip" data-placement="top" title="计算机内部的数值存储">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="http://arebya.com/post/dynamic-programming/" data-toggle="tooltip" data-placement="top" title="动态规划">Next Post &rarr;</a>
+              <a href="https://arebya.com/post/dynamic-programming/" data-toggle="tooltip" data-placement="top" title="动态规划">Next Post &rarr;</a>
             </li>
           
         </ul>
@@ -407,7 +407,7 @@
 
           
             &nbsp;&bull;&nbsp;
-            <a href="http://arebya.com">arebya</a>
+            <a href="https://arebya.com">arebya</a>
           
         </p>
         
@@ -424,13 +424,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="http://arebya.com/js/main.js"></script>
-<script src="http://arebya.com/js/highlight.min.js"></script>
+<script src="https://arebya.com/js/main.js"></script>
+<script src="https://arebya.com/js/highlight.min.js"></script>
 <script> hljs.initHighlightingOnLoad(); </script>
 <script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
-<script src="http://arebya.com/js/load-photoswipe.js"></script>
+<script src="https://arebya.com/js/load-photoswipe.js"></script>
 
 
 
