@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>习惯 on arebya</title>
-    <link>https://arebya.com/tags/%E4%B9%A0%E6%83%AF/</link>
+    <link>http://arebya.com/tags/%E4%B9%A0%E6%83%AF/</link>
     <description>Recent content in 习惯 on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Fri, 29 Dec 2017 10:38:18 +0000</lastBuildDate>
     
-	<atom:link href="https://arebya.com/tags/%E4%B9%A0%E6%83%AF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://arebya.com/tags/%E4%B9%A0%E6%83%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>高效能人士的7个习惯</title>
-      <link>https://arebya.com/post/7goods/</link>
+      <link>http://arebya.com/post/7goods/</link>
       <pubDate>Fri, 29 Dec 2017 10:38:18 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>https://arebya.com/post/7goods/</guid>
+      <guid>http://arebya.com/post/7goods/</guid>
       <description> 主动积极 以终为始 要事第一 双赢思维 统合综效 知彼解己 不断更新  </description>
     </item>
     

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>计算机基础 on arebya</title>
-    <link>https://arebya.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
+    <link>http://arebya.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
     <description>Recent content in 计算机基础 on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Mon, 08 Jan 2018 14:08:32 +0000</lastBuildDate>
     
-	<atom:link href="https://arebya.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://arebya.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>计算机内部的数值存储</title>
-      <link>https://arebya.com/post/binary-in-computer/</link>
+      <link>http://arebya.com/post/binary-in-computer/</link>
       <pubDate>Mon, 08 Jan 2018 14:08:32 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>https://arebya.com/post/binary-in-computer/</guid>
+      <guid>http://arebya.com/post/binary-in-computer/</guid>
       <description>计算机中的数值存储  机器数和真值  原码、反码、补码  原码有什么问题（1+（-1）=-2） 反码有什么问题（1+（-1）=-0） 补码运算 补码表示的溢出   计算机中的数值存储 机器数和真值 一个数在计算机中的二进制表示形式, 叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.
 比如，十进制中的数 +3 ，计算机字长为8位，转换成二进制就是00000011。如果是 -3 ，就是 10000011 。那么，这里的 00000011 和 10000011 就是机器数。
 原码、反码、补码 原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值。

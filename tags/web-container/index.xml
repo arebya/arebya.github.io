@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Container on arebya</title>
-    <link>https://arebya.com/tags/web-container/</link>
+    <link>http://arebya.com/tags/web-container/</link>
     <description>Recent content in Web Container on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Tue, 13 Feb 2018 11:30:56 +0000</lastBuildDate>
     
-	<atom:link href="https://arebya.com/tags/web-container/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://arebya.com/tags/web-container/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>web容器</title>
-      <link>https://arebya.com/post/web-containers/</link>
+      <link>http://arebya.com/post/web-containers/</link>
       <pubDate>Tue, 13 Feb 2018 11:30:56 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>https://arebya.com/post/web-containers/</guid>
+      <guid>http://arebya.com/post/web-containers/</guid>
       <description> web容器有哪些选择  Tomcat Jetty Undertow 基于Netty的**  对比及区别 分析 </description>
     </item>
     

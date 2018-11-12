@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>网络 on arebya</title>
-    <link>https://arebya.com/tags/%E7%BD%91%E7%BB%9C/</link>
+    <link>http://arebya.com/tags/%E7%BD%91%E7%BB%9C/</link>
     <description>Recent content in 网络 on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>shiya6900@126.com</webMaster>
     <lastBuildDate>Fri, 23 Mar 2018 10:53:38 +0000</lastBuildDate>
     
-	<atom:link href="https://arebya.com/tags/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://arebya.com/tags/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>so_broadcast</title>
-      <link>https://arebya.com/post/so-broadcast/</link>
+      <link>http://arebya.com/post/so-broadcast/</link>
       <pubDate>Fri, 23 Mar 2018 10:53:38 +0000</pubDate>
       <author>shiya6900@126.com</author>
-      <guid>https://arebya.com/post/so-broadcast/</guid>
+      <guid>http://arebya.com/post/so-broadcast/</guid>
       <description>Netty在开发基于udp协议的代码中server段设置的参数broadcast有什么意义？
 public static void initServer() { EventLoopGroup group = new NioEventLoopGroup(); try { Bootstrap bootstrap = new Bootstrap(); bootstrap.group(group) .channel(NioDatagramChannel.class) .option(ChannelOption.SO_BROADCAST, true) .handler(new UdpServerHandler()); Channel channel = bootstrap.bind(AppConstants.SEARCH_PORT).sync().channel(); channel.closeFuture().await(); } catch (InterruptedException e) { e.printStackTrace(); } finally { group.shutdownGracefully(); } }  设置SO_BROADCAST选项为0，只接受单播数据报 设置SO_BROADCASE选项为1，接受UDP广播</description>
     </item>

@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on arebya</title>
-    <link>https://arebya.com/categories/</link>
+    <link>http://arebya.com/categories/</link>
     <description>Recent content in Categories on arebya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>shiya6900@126.com</managingEditor>
     <webMaster>shiya6900@126.com</webMaster>
     
-	<atom:link href="https://arebya.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://arebya.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
