@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on arebya</title>
+    <link>http://arebya.com/post/</link>
+    <description>Recent content in Posts on arebya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>shiya6900@126.com</managingEditor>
+    <webMaster>shiya6900@126.com</webMaster>
+    <lastBuildDate>Sat, 10 Nov 2018 16:24:15 +0000</lastBuildDate>
+    
+	<atom:link href="http://arebya.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>service mesh业界实施案例汇总（不断更新）</title>
+      <link>http://arebya.com/post/page/</link>
+      <pubDate>Sat, 10 Nov 2018 16:24:15 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/page/</guid>
+      <description>&lt;p&gt;作为下一代微服务架构，Service Mesh已经在业界大放异彩&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2038 问题</title>
+      <link>http://arebya.com/post/2038/</link>
+      <pubDate>Wed, 07 Nov 2018 11:55:12 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/2038/</guid>
+      <description>&lt;p&gt;生活中很有意思的一个问题，细究起来可能是自己未知的一块领域，比如2038问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>从socket api的几个方法看tcp机制</title>
+      <link>http://arebya.com/post/tcp-related/</link>
+      <pubDate>Mon, 29 Oct 2018 20:37:21 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/tcp-related/</guid>
+      <description>&lt;h2 id=&#34;背景问题&#34;&gt;背景问题&lt;/h2&gt;
+
+&lt;p&gt;在使用rpc框架时，设置socket参数时会使用到下面的api：&lt;/p&gt;
+
+&lt;p&gt;soccket.setReceiveBufferSize()&amp;mdash;&amp;mdash;设置接受数据的缓冲区大小&lt;/p&gt;
+
+&lt;p&gt;socket.setSendBufferSize()&amp;mdash;&amp;mdash;&amp;mdash;-设置发送数据的缓冲区大小&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>算法和数据结构离我们有多远？</title>
+      <link>http://arebya.com/post/algorithm/</link>
+      <pubDate>Sat, 27 Oct 2018 17:42:45 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/algorithm/</guid>
+      <description>&lt;p&gt;最近在看“极客时间”的数据结构和算法课程，隐隐有种觉得太理论，脱离实际的感觉，想到如何才能跟工程结合起来呢？有没有一种比较系统的方式，能搜集一下基本的数据结构或者算法的应用cases呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>transaction</title>
+      <link>http://arebya.com/post/transaction/</link>
+      <pubDate>Thu, 31 May 2018 15:01:51 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/transaction/</guid>
+      <description> 事务的本质 MySQL事务 Redis事务 Kafka事务 </description>
+    </item>
+    
+    <item>
+      <title>计数问题</title>
+      <link>http://arebya.com/post/unsolved-problem-5/</link>
+      <pubDate>Wed, 16 May 2018 20:05:32 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/unsolved-problem-5/</guid>
+      <description>问题背景：
+实现可扩展高可用的计数系统，满足不同业务的计数需求，并可提供简单的统计功能。如访问pv、uv的分时统计等 或微博的实时评论、转发、关注数等  </description>
+    </item>
+    
+    <item>
+      <title>抢购系统</title>
+      <link>http://arebya.com/post/unsolved-problem-4/</link>
+      <pubDate>Wed, 16 May 2018 20:04:52 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/unsolved-problem-4/</guid>
+      <description>问题背景：
+完整的抢购系统方案  </description>
+    </item>
+    
+    <item>
+      <title>ID生成器</title>
+      <link>http://arebya.com/post/unsolved-problem-3/</link>
+      <pubDate>Wed, 16 May 2018 20:02:32 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/unsolved-problem-3/</guid>
+      <description>问题背景：
+针对系统中不同的ID生成需求，设计通用的ID生成系统，保证高可用和性能。有序无序？可否反解？承载能力？  </description>
+    </item>
+    
+    <item>
+      <title>全局限流问题</title>
+      <link>http://arebya.com/post/unsolved-problem-2/</link>
+      <pubDate>Wed, 16 May 2018 19:59:44 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/unsolved-problem-2/</guid>
+      <description>问题背景：
+如何设计通用的全局限流方案，实现可配置的接口、总体限流？  </description>
+    </item>
+    
+    <item>
+      <title>关键词匹配问题</title>
+      <link>http://arebya.com/post/unsolved-problem-1/</link>
+      <pubDate>Wed, 16 May 2018 19:57:47 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/unsolved-problem-1/</guid>
+      <description>问题背景：
+针对一个大的文本文件，如何根据给定的关键词字典进行快速匹配并标红</description>
+    </item>
+    
+    <item>
+      <title>mysql_index</title>
+      <link>http://arebya.com/post/mysql-index/</link>
+      <pubDate>Mon, 09 Apr 2018 19:05:35 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/mysql-index/</guid>
+      <description>以下内容基于mysql innodb引擎
+索引数据结构 #### B-tree
+#### B+tree
+索引存储结构 #### 聚集索引
+#### 非聚集索引
+索引的应用 #### B+索引
+#### 自适应hash索引
+#### 全文索引
+### 为什么是B+ tree
+主要考虑两点：磁盘IO次数、区间访问（基于范围的查询）效率
+##### 和红黑树对比 在大规模数据存储的时候，红黑树往往出现由于树的深度过大而造成磁盘IO读写过于频繁，进而导致效率低下的情况。在内存中使用改数据结构比较多
+#### 和B-tree对比 B-树（B类树）的特定就是每层节点数目非常多，层数很少，目的就是为了就少磁盘IO次数。但是B-树的每个节点都有data域（指针），这无疑增大了节点大小，说白了增加了磁盘IO次数（磁盘IO一次读出的数据量大小是固定的，单个数据变大，每次读出的就少，IO次数增多）</description>
+    </item>
+    
+    <item>
+      <title>mysql_conversion</title>
+      <link>http://arebya.com/post/mysql-conversion/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:00 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/mysql-conversion/</guid>
+      <description> 隐式类型转换 数据类型字段 如果以数字开关的，后面的字符将被截断，只取前面的数字值，如果不以数字开关的将被置为0
+table表中的columnA字段为int类型
+select * from table where columnA=&#39;7788Ab&#39;  相当于
+select * from table where columnA=7788  而
+select * from table where columnA=&#39;Ab7788&#39;  相当于
+select * from table where columnA=0  字符类型字段 table表中的columnB字段为varchar类型,且有索引idx_columnB
+select * from table where columnB=&#39;7788Ab&#39;  可以正常使用索引 而
+select * from table where columnB=7788  发生隐式类型转换，不能使用索引
+官方规则  两个参数至少有一个是 NULL 时，比较的结果也是 NULL，例外是使用 &amp;lt;=&amp;gt; 对两个 NULL 做比较时会返回 1，这两种情况都不需要做类型转换 两个参数都是字符串，会按照字符串来比较，不做类型转换 两个参数都是整数，按照整数来比较，不做类型转换 十六进制的值和非数字做比较时，会被当做二进制串 有一个参数是 TIMESTAMP 或 DATETIME，并且另外一个参数是常量，常量会被转换为 timestamp 有一个参数是 decimal 类型，如果另外一个参数是 decimal 或者整数，会将整数转换为 decimal 后进行比较，如果另外一个参数是浮点数，则会把 decimal 转换为浮点数进行比较 所有其他情况下，两个参数都会被转换为浮点数再进行比较  </description>
+    </item>
+    
+    <item>
+      <title>consistent_hash</title>
+      <link>http://arebya.com/post/consistent-hash/</link>
+      <pubDate>Wed, 28 Mar 2018 15:13:37 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/consistent-hash/</guid>
+      <description>为什么需要一致性hash 算法的理解 http://en.wikipedia.org/wiki/Consistent_hashing
+具体实现及应用 Dubbo中一致性Hash的实现：com.alibaba.dubbo.rpc.cluster.loadbalance.ConsistentHashLoadBalance
+Motan中一致性Hash的实现：com.weibo.api.motan.cluster.loadbalance.ConsistentHashLoadBalance
+Guava中一致性Hash实现：com.google.common.hash.Hashing.consistentHash(*)</description>
+    </item>
+    
+    <item>
+      <title>mqtt</title>
+      <link>http://arebya.com/post/mqtt/</link>
+      <pubDate>Wed, 28 Mar 2018 15:13:26 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/mqtt/</guid>
+      <description>与其他协议的区别 xmpp等
+协议格式 https://mcxiaoke.gitbooks.io/mqtt-cn/content/
+应用 java based broker： https://github.com/andsel/moquette
+netty中支持mqtt的编解码handler: https://netty.io/4.1/api/io/netty/handler/codec/mqtt/package-summary.html</description>
+    </item>
+    
+    <item>
+      <title>threadlocal</title>
+      <link>http://arebya.com/post/threadlocal/</link>
+      <pubDate>Tue, 27 Mar 2018 15:44:32 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/threadlocal/</guid>
+      <description>ThreadLocal public class RawRunnableTest { @Test public void testRawInheritableThreadLocal() throws InterruptedException { final ThreadLocal&amp;lt;Span&amp;gt; threadLocal = new ThreadLocal&amp;lt;&amp;gt;(); threadLocal.set(new Span(&amp;quot;xiexiexie&amp;quot;)); //输出 xiexiexie Object o = threadLocal.get(); Runnable runnable = new Runnable() { @Override public void run() { System.out.println(threadLocal.get() + &amp;quot;thead-&amp;quot; + Thread.currentThread()); threadLocal.set(new Span(&amp;quot;zhangzhangzhang1&amp;quot;)); System.out.println(threadLocal.get() + &amp;quot;thead-&amp;quot; + Thread.currentThread()); } }; Runnable runnable2 = new Runnable() { @Override public void run() { System.out.println(threadLocal.get() + &amp;quot;thead-&amp;quot; + Thread.currentThread()); threadLocal.set(new Span(&amp;quot;zhangzhangzhang2&amp;quot;)); System.</description>
+    </item>
+    
+    <item>
+      <title>mysql_hint_comment</title>
+      <link>http://arebya.com/post/mysql-hint-comment/</link>
+      <pubDate>Tue, 27 Mar 2018 15:06:15 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/mysql-hint-comment/</guid>
+      <description>Mysql 语法 comment https://dev.mysql.com/doc/refman/5.7/en/comments.html
+hint 应用 Cobar中的应用 https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/hint/PartitionOperandHintParser.java
+https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/ServerRouter.java
+MyCat中的应用 https://github.com/MyCATApache/Mycat-Server/blob/712518e8ce257f34f71088d0fffb74d40c675a54/src/main/java/io/mycat/route/RouteService.java
+可扩展的应用 分布式调用追踪——————业务追踪溯源</description>
+    </item>
+    
+    <item>
+      <title>lsm_tree</title>
+      <link>http://arebya.com/post/lsm-tree/</link>
+      <pubDate>Tue, 27 Mar 2018 14:57:01 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/lsm-tree/</guid>
+      <description> 为什么需要LSM 与B树、B+树、红黑树的区别
+LSM原理 LSM的应用 LSM与LevelDB https://github.com/dain/leveldb
+LSM与HBase </description>
+    </item>
+    
+    <item>
+      <title>so_broadcast</title>
+      <link>http://arebya.com/post/so-broadcast/</link>
+      <pubDate>Fri, 23 Mar 2018 10:53:38 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/so-broadcast/</guid>
+      <description>Netty在开发基于udp协议的代码中server段设置的参数broadcast有什么意义？
+public static void initServer() { EventLoopGroup group = new NioEventLoopGroup(); try { Bootstrap bootstrap = new Bootstrap(); bootstrap.group(group) .channel(NioDatagramChannel.class) .option(ChannelOption.SO_BROADCAST, true) .handler(new UdpServerHandler()); Channel channel = bootstrap.bind(AppConstants.SEARCH_PORT).sync().channel(); channel.closeFuture().await(); } catch (InterruptedException e) { e.printStackTrace(); } finally { group.shutdownGracefully(); } }  设置SO_BROADCAST选项为0，只接受单播数据报 设置SO_BROADCASE选项为1，接受UDP广播</description>
+    </item>
+    
+    <item>
+      <title>web容器</title>
+      <link>http://arebya.com/post/web-containers/</link>
+      <pubDate>Tue, 13 Feb 2018 11:30:56 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/web-containers/</guid>
+      <description> web容器有哪些选择  Tomcat Jetty Undertow 基于Netty的**  对比及区别 分析 </description>
+    </item>
+    
+    <item>
+      <title>动态规划</title>
+      <link>http://arebya.com/post/dynamic-programming/</link>
+      <pubDate>Thu, 25 Jan 2018 16:43:02 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/dynamic-programming/</guid>
+      <description> 原文转自：http://www.sohu.com/a/153858619_466939
+问题 题目1：
+有一座高度是10级台阶的楼梯，从下往上走，每跨一步只能向上1级或者2级台阶。要求用程序来求出一共有多少种走法。
+题目二：
+有一个国家发现了5座金矿，每座金矿的黄金储量不同，需要参与挖掘的工人数也不同。参与挖矿工人的总数是10人。每座金矿要么全挖，要么不挖，不能派出一半人挖取一半金矿。要求用程序求解出，要想得到尽可能多的黄金，应该选择挖取哪几座金矿？
+解决思路 TODO
+动态规划  最优子结构
+ 边界
+ 状态转移公式
+  </description>
+    </item>
+    
+    <item>
+      <title>大小端问题</title>
+      <link>http://arebya.com/post/little-big-endian/</link>
+      <pubDate>Fri, 19 Jan 2018 14:44:31 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/little-big-endian/</guid>
+      <description>背景 计算机系统中内存是以字节为单位进行编址的，每个地址单元都唯一的对应着1个字节（8 bit）。这可以应对char类型数据的存储要求，因为char类型长度刚好是1个字节，但是有些类型的长度是超过1个字节的（字符串虽然是多字节的，但它本质是由一个个char类型组成的类似数组的结构而已），比如C/C++中，short类型一般是2个字节，int类型一般4个字节等。因此这里就存在着一个如何安排多个字节数据中各字节存放顺序的问题。正是因为不同的安排顺序导致了大端存储模式和小端存储模式的存在。
+定义 假如有一个4字节的数据为 0x12 34 56 78（十进制：305419896，0x12为高字节，0x78为低字节），若将其存放于地址 0x4000 8000中，则有：
+内存地址 0x4000 8000（低地址） 0x4000 8001 0x4000 8002 0x4000 8003（高地址） 大端模式 0x12（高字节） 0x34 0x56 0x78（低字节） 小端模式 0x78（低字节） 0x56 0x34 0x12（高字节）
+特点 大端模式优点： 1. 符号位在所表示的数据的内存的第一个字节中，便于快速判断数据的正负和大小
+小端模式优点：
+1. 内存的低地址处存放低字节，所以在强制转换数据时不需要调整字节的内容（注解：比如把int的4字节强制转换成short的2字节时，就直接把int数据存储的前两个字节给short就行，因为其前两个字节刚好就是最低的两个字节，符合转换逻辑）；
+2. CPU做数值运算时从内存中依顺序依次从低位到高位取数据进行运算，直到最后刷新最高位的符号位，这样的运算方式会更高效</description>
+    </item>
+    
+    <item>
+      <title>计算机内部的数值存储</title>
+      <link>http://arebya.com/post/binary-in-computer/</link>
+      <pubDate>Mon, 08 Jan 2018 14:08:32 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/binary-in-computer/</guid>
+      <description>计算机中的数值存储  机器数和真值  原码、反码、补码  原码有什么问题（1+（-1）=-2） 反码有什么问题（1+（-1）=-0） 补码运算 补码表示的溢出   计算机中的数值存储 机器数和真值 一个数在计算机中的二进制表示形式, 叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.
+比如，十进制中的数 +3 ，计算机字长为8位，转换成二进制就是00000011。如果是 -3 ，就是 10000011 。那么，这里的 00000011 和 10000011 就是机器数。
+原码、反码、补码 原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值。
+反码的表示方法是：正数的反码是其本身；的反码是在其原码的基础上, 符号位不变，其余各个位取反。
+补码的表示方法是：正数的补码就是其本身；的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)。
+原码有什么问题（1+（-1）=-2） 如果使用原码进行计算： 1 - 1 = 1 + (-1) = [00000001]原 + [10000001]原 = [10000010]原 = -2
+问题：计算错误
+反码有什么问题（1+（-1）=-0） 如果使用反码进行计算： 1 - 1 = 1 + (-1) = [0000 0001]原 + [1000 0001]原 = [0000 0001]反 + [1111 1110]反 = [1111 1111]反 = [1000 0000]原 = -0 问题：0带符号是没有任何意义的，而且会有[0000 0000]原和[1000 0000]原两个编码表示0。</description>
+    </item>
+    
+    <item>
+      <title>spring boot fatjar的扫描</title>
+      <link>http://arebya.com/post/fatjar/</link>
+      <pubDate>Fri, 05 Jan 2018 13:57:27 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/fatjar/</guid>
+      <description>spring-boot-maven-plugin fat jar的结构 fat jar问题 问题：Jersey doesn&amp;rsquo;t always work with Spring Boot fat jars
+发布说明：1.4版本提供了处理方法https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.4-Release-Notes
+处理方式 打包 打包插件添加需要特别处理的jar包如：
+&amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;requiresUnpack&amp;gt; &amp;lt;!--指定需要unpack的依赖--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.netflix.eureka&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;eureka-core&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.netflix.eureka&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/requiresUnpack&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  查看插件打完的fat jar信息
+spring boot 应用启动逻辑 springboot的JarLauncher继承自ExecutableArchiveLauncher，会从manifest文件中获取main-class，start-class
+spring boot 实现了自定义的classLoader——LaunchedURLClassLoader，以当前fat jar开始进行扫描BOOT-INF/classes/，BOOT-INF/lib/
+protected Archive getNestedArchive(Archive.Entry entry) throws IOException { JarEntry jarEntry = ((JarFileEntry)entry).getJarEntry(); // 对需要unpack的jar 特殊处理 if (jarEntry.getComment().startsWith(&amp;quot;UNPACK:&amp;quot;)) return getUnpackedNestedArchive(jarEntry); try { JarFile jarFile = this.</description>
+    </item>
+    
+    <item>
+      <title>新年读书计划</title>
+      <link>http://arebya.com/post/reading/</link>
+      <pubDate>Fri, 05 Jan 2018 10:49:16 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/reading/</guid>
+      <description>| 类别 |书名 | 计划时间 | 状态 | &amp;mdash;&amp;mdash;&amp;ndash; | &amp;mdash;&amp;ndash;: | :&amp;mdash;-: | |软件工程 | 《编程珠玑》 | 2018.01 | |软件工程 | 《人月神话》 | 2018.02 | |系统架构 | 《高可用架构》 | 2018.01 | done |技术框架 | 《Netty权威指南》 | 2018.02 | |基础知识 | 《深入理解计算机系统》|2018.03 | |基础知识 | 《TCP/IP详解》 |2018.03 | |分布式 | 《Redis设计与实现》 |2018.04 | done |分布式 | 《Kafka技术内幕》 |2018.04 | |语言 | 《Go WEB编程》 |2018.05 | |语言 | 《Go 并发编程》 | 2018.</description>
+    </item>
+    
+    <item>
+      <title>高效能人士的7个习惯</title>
+      <link>http://arebya.com/post/7goods/</link>
+      <pubDate>Fri, 29 Dec 2017 10:38:18 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/7goods/</guid>
+      <description> 主动积极 以终为始 要事第一 双赢思维 统合综效 知彼解己 不断更新  </description>
+    </item>
+    
+  </channel>
+</rss>

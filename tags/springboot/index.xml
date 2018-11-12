@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Springboot on arebya</title>
+    <link>http://arebya.com/tags/springboot/</link>
+    <description>Recent content in Springboot on arebya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>shiya6900@126.com</managingEditor>
+    <webMaster>shiya6900@126.com</webMaster>
+    <lastBuildDate>Fri, 05 Jan 2018 13:57:27 +0000</lastBuildDate>
+    
+	<atom:link href="http://arebya.com/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>spring boot fatjar的扫描</title>
+      <link>http://arebya.com/post/fatjar/</link>
+      <pubDate>Fri, 05 Jan 2018 13:57:27 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/fatjar/</guid>
+      <description>spring-boot-maven-plugin fat jar的结构 fat jar问题 问题：Jersey doesn&amp;rsquo;t always work with Spring Boot fat jars
+发布说明：1.4版本提供了处理方法https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.4-Release-Notes
+处理方式 打包 打包插件添加需要特别处理的jar包如：
+&amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;requiresUnpack&amp;gt; &amp;lt;!--指定需要unpack的依赖--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.netflix.eureka&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;eureka-core&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.netflix.eureka&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/requiresUnpack&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  查看插件打完的fat jar信息
+spring boot 应用启动逻辑 springboot的JarLauncher继承自ExecutableArchiveLauncher，会从manifest文件中获取main-class，start-class
+spring boot 实现了自定义的classLoader——LaunchedURLClassLoader，以当前fat jar开始进行扫描BOOT-INF/classes/，BOOT-INF/lib/
+protected Archive getNestedArchive(Archive.Entry entry) throws IOException { JarEntry jarEntry = ((JarFileEntry)entry).getJarEntry(); // 对需要unpack的jar 特殊处理 if (jarEntry.getComment().startsWith(&amp;quot;UNPACK:&amp;quot;)) return getUnpackedNestedArchive(jarEntry); try { JarFile jarFile = this.</description>
+    </item>
+    
+  </channel>
+</rss>

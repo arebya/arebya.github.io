@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>阅读 on arebya</title>
+    <link>http://arebya.com/tags/%E9%98%85%E8%AF%BB/</link>
+    <description>Recent content in 阅读 on arebya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>shiya6900@126.com</managingEditor>
+    <webMaster>shiya6900@126.com</webMaster>
+    <lastBuildDate>Fri, 05 Jan 2018 10:49:16 +0000</lastBuildDate>
+    
+	<atom:link href="http://arebya.com/tags/%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>新年读书计划</title>
+      <link>http://arebya.com/post/reading/</link>
+      <pubDate>Fri, 05 Jan 2018 10:49:16 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/reading/</guid>
+      <description>| 类别 |书名 | 计划时间 | 状态 | &amp;mdash;&amp;mdash;&amp;ndash; | &amp;mdash;&amp;ndash;: | :&amp;mdash;-: | |软件工程 | 《编程珠玑》 | 2018.01 | |软件工程 | 《人月神话》 | 2018.02 | |系统架构 | 《高可用架构》 | 2018.01 | done |技术框架 | 《Netty权威指南》 | 2018.02 | |基础知识 | 《深入理解计算机系统》|2018.03 | |基础知识 | 《TCP/IP详解》 |2018.03 | |分布式 | 《Redis设计与实现》 |2018.04 | done |分布式 | 《Kafka技术内幕》 |2018.04 | |语言 | 《Go WEB编程》 |2018.05 | |语言 | 《Go 并发编程》 | 2018.</description>
+    </item>
+    
+  </channel>
+</rss>

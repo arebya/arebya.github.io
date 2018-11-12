@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>事务 on arebya</title>
+    <link>http://arebya.com/tags/%E4%BA%8B%E5%8A%A1/</link>
+    <description>Recent content in 事务 on arebya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>shiya6900@126.com</managingEditor>
+    <webMaster>shiya6900@126.com</webMaster>
+    <lastBuildDate>Thu, 31 May 2018 15:01:51 +0000</lastBuildDate>
+    
+	<atom:link href="http://arebya.com/tags/%E4%BA%8B%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>transaction</title>
+      <link>http://arebya.com/post/transaction/</link>
+      <pubDate>Thu, 31 May 2018 15:01:51 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/transaction/</guid>
+      <description> 事务的本质 MySQL事务 Redis事务 Kafka事务 </description>
+    </item>
+    
+  </channel>
+</rss>

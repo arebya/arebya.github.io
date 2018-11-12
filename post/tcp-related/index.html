@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>从socket api的几个方法看tcp机制 - arebya</title>
+  <meta property="og:title" content="从socket api的几个方法看tcp机制" />
+  <meta name="twitter:title" content="从socket api的几个方法看tcp机制" />
+  <meta name="description" content="背景问题
+
+在使用rpc框架时，设置socket参数时会使用到下面的api：
+
+soccket.setReceiveBufferSize()&mdash;&mdash;设置接受数据的缓冲区大小
+
+socket.setSendBufferSize()&mdash;&mdash;&mdash;-设置发送数据的缓冲区大小">
+  <meta property="og:description" content="背景问题
+
+在使用rpc框架时，设置socket参数时会使用到下面的api：
+
+soccket.setReceiveBufferSize()&mdash;&mdash;设置接受数据的缓冲区大小
+
+socket.setSendBufferSize()&mdash;&mdash;&mdash;-设置发送数据的缓冲区大小">
+  <meta name="twitter:description" content="背景问题
+
+在使用rpc框架时，设置socket参数时会使用到下面的api：
+
+soccket.setReceiveBufferSize()&mdash;&mdash;设置接受数据的缓冲区大小
+
+socket.setSendBufferSize()&mdash;&mdash;&mdash;-设置发送数据的缓冲区大小"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "arebya",
+    
+    "url": "http://arebya.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http://arebya.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http://arebya.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http://arebya.com/post/tcp-related/",
+          "name": "从socket api的几个方法看tcp机制"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "从socket api的几个方法看tcp机制",
+  "description" : "背景问题 在使用rpc框架时，设置socket参数时会使用到下面的api：
+soccket.setReceiveBufferSize()&amp;mdash;&amp;mdash;设置接受数据的缓冲区大小
+socket.setSendBufferSize()&amp;mdash;&amp;mdash;&amp;mdash;-设置发送数据的缓冲区大小
+",
+  "inLanguage" : "en",
+  "wordCount": 122,
+  "datePublished" : "2018-10-29T20:37:21",
+  "dateModified" : "2018-10-29T20:37:21",
+  "image" : "http://arebya.com/img/avatar-icon.png",
+  "keywords" : [ "tcp, netty" ],
+  "mainEntityOfPage" : "http://arebya.com/post/tcp-related/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http://arebya.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http://arebya.com/img/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="从socket api的几个方法看tcp机制" />
+<meta property="og:description" content="背景问题
+
+在使用rpc框架时，设置socket参数时会使用到下面的api：
+
+soccket.setReceiveBufferSize()&mdash;&mdash;设置接受数据的缓冲区大小
+
+socket.setSendBufferSize()&mdash;&mdash;&mdash;-设置发送数据的缓冲区大小">
+<meta property="og:image" content="http://arebya.com/img/avatar-icon.png" />
+<meta property="og:url" content="http://arebya.com/post/tcp-related/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="arebya" />
+  <meta name="twitter:title" content="从socket api的几个方法看tcp机制" />
+  <meta name="twitter:description" content="背景问题
+
+在使用rpc框架时，设置socket参数时会使用到下面的api：
+
+soccket.setReceiveBufferSize()&mdash;&mdash;设置接受数据的缓冲区大小
+
+socket.setSendBufferSize()&mdash;&mdash;&mdash;-设置发送数据的缓冲区大小">
+  <meta name="twitter:image" content="http://arebya.com/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='http://arebya.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://arebya.com/img/avatar-icon.png" />
+  <meta name="twitter:image" content="http://arebya.com/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://arebya.com/post/tcp-related/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="arebya" />
+
+  <meta name="generator" content="Hugo 0.51" />
+  <link rel="alternate" href="http://arebya.com/index.xml" type="application/rss+xml" title="arebya">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://arebya.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://arebya.com/css/highlight.min.css" /><link rel="stylesheet" href="http://arebya.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://arebya.com">arebya</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Projects</a>
+              <div class="navlinks-children">
+                
+                  <a href="https://github.com/arebya/algorithm-use-cases-in-production">algorithm-use-cases-in-production</a>
+                
+                  <a href="https://github.com/arebya/microservice-management">microservice-management</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="arebya" href="http://arebya.com">
+            <img class="avatar-img" src="http://arebya.com/img/avatar-icon.png" alt="arebya" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>从socket api的几个方法看tcp机制</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 29, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h2 id="背景问题">背景问题</h2>
+
+<p>在使用rpc框架时，设置socket参数时会使用到下面的api：</p>
+
+<p>soccket.setReceiveBufferSize()&mdash;&mdash;设置接受数据的缓冲区大小</p>
+
+<p>socket.setSendBufferSize()&mdash;&mdash;&mdash;-设置发送数据的缓冲区大小</p>
+
+<p>socket.setTcpNoDelay()&mdash;&mdash;&mdash;&mdash;&ndash;是否开启Nagle算法，true开启，false关闭</p>
+
+<p>socket.setSoLinger()&mdash;&mdash;&mdash;&mdash;&mdash;-close socket时 发送队列如何处理数据，丢弃或者继续发送，通常需要关闭，保持默认行为，由系统接管保证发送数据完成</p>
+
+<p>socket.setSoTimeout()&mdash;&mdash;&mdash;&mdash;&mdash;对于服务端来说，accept空等客户端连接超过则异常，对于客户端来说，read读数据流取数据最长等待时间，超过则异常</p>
+
+<p>socket.setKeepAlive()&mdash;&mdash;&mdash;&mdash;&mdash;默认的心跳保活机制，但在连接双方ESTABLISEHED之后两个小时左右上层没有数据传输的情况下，才会起作用。一般应用不使用此机制，需要自己做保活机制</p>
+
+<p>socket.setTrafficClass()&mdash;&mdash;&mdash;&mdash;IP_TOS,设置服务类型，共四种：IPTOS_LOWCOST，IPTOS_RELIABILITY，IPTOS_THROUGHPUT，IPTOS_LOWDELAY，可组合使用</p>
+
+<p>socket.setReuseAddress()&mdash;&mdash;&mdash;&mdash;是否重用处于TIME_WAIT状态的地址</p>
+
+<p>socket.setPerformancePreferences(connectionTime,latency,bandwidth)&mdash;设置低连接时间/低延迟/高带宽相对的优先级</p>
+
+<p>ServerSocket backlog&mdash;&mdash;&mdash;&mdash;&mdash;-服务端请求处理线程满时，临时存放已完成三次握手的请求队列的长度，默认50</p>
+
+<p>这些参数对我们在进行网络编程时起到了什么作用，不同的参数设置会有什么影响程序的表现呢？</p>
+
+<h2 id="tcp协议">tcp协议</h2>
+
+<h3 id="拥塞控制">拥塞控制</h3>
+
+<p>针对网络全局行的控制，主要为了防止网络链路出现过载，导致出现网络吞吐量由于负荷增大而下降的情况。</p>
+
+<h4 id="慢开始与拥塞避免">慢开始与拥塞避免</h4>
+
+<p><img src="/img/tcp_slow_start.jpeg" alt="&quot;慢开始&quot;" /></p>
+
+<h4 id="快重传-快恢复">快重传&amp;快恢复</h4>
+
+<p><img src="/img/tcp_fast_retransmission.jpeg" alt="&quot;快重传&quot;" /></p>
+
+<p><img src="/img/tcp_fast_recovery.jpeg" alt="&quot;快恢复&quot;" /></p>
+
+<h3 id="滑动窗口-流量控制">滑动窗口&amp;流量控制</h3>
+
+<p>针对点对点通信质量的控制，利用滑动窗口实现在TCP连接上对发送方发送速率的控制，控制流量，是得自己能够及时接收数据</p>
+
+<p><img src="/img/tcp_flow_control.jpeg" alt="&quot;滑动窗口&quot;" /></p>
+
+<h2 id="应用">应用</h2>
+
+<h3 id="rpc框架中的使用">rpc框架中的使用</h3>
+
+<p>目前大部分的rpc framework大多采用netty中支持的tcp协议套件来进行包装开发，避免传统nio+socket这一层级的复杂操作，但最终还是作用于ServerSocket和Socket上。但具体各自框架为什么选择或者不选择设置某些选项，是需要仔细考究的点（后续补充）。</p>
+
+<h4 id="dubbo">dubbo</h4>
+
+<p>server端(NettyServer)ServerSocketChannelConfig根据目标操作系统会有不同的实现</p>
+
+<pre><code class="language-java">
+        bootstrap.group(bossGroup, workerGroup)
+                .channel(NioServerSocketChannel.class)
+                .childOption(ChannelOption.TCP_NODELAY, Boolean.TRUE) // 开启TCP_NODELAY
+                .childOption(ChannelOption.SO_REUSEADDR, Boolean.TRUE) // 开启 SO_REUSEADDR
+                .childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
+                .childHandler(new ChannelInitializer&lt;NioSocketChannel&gt;() {
+                    @Override
+                    protected void initChannel(NioSocketChannel ch) throws Exception {
+                        NettyCodecAdapter adapter = new NettyCodecAdapter(getCodec(), getUrl(), NettyServer.this);
+                        ch.pipeline()//.addLast(&quot;logging&quot;,new LoggingHandler(LogLevel.INFO))//for debug
+                                .addLast(&quot;decoder&quot;, adapter.getDecoder())
+                                .addLast(&quot;encoder&quot;, adapter.getEncoder())
+                                .addLast(&quot;handler&quot;, nettyServerHandler);
+                    }
+                });
+</code></pre>
+
+<p>client端(NettyClient) SocketChannelConfig 根据操作系统的实现会有不同</p>
+
+<pre><code class="language-java">bootstrap.group(nioEventLoopGroup)
+                .option(ChannelOption.SO_KEEPALIVE, true)  //开启keepalive
+                .option(ChannelOption.TCP_NODELAY, true)   //开启TCP_NODELAY
+                .option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
+                //.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, getTimeout())
+                .channel(NioSocketChannel.class);
+
+        if (getConnectTimeout() &lt; 3000) {.  // 设置
+            bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 3000);
+        } else {
+            bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, getConnectTimeout());
+        }
+
+</code></pre>
+
+<h4 id="sofa-rpc">sofa-rpc</h4>
+
+<p>server端（RpcServer）</p>
+
+<pre><code class="language-java">  this.bootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
+            .option(ChannelOption.SO_BACKLOG, SystemProperties.tcp_so_backlog())
+            .option(ChannelOption.SO_REUSEADDR, SystemProperties.tcp_so_reuseaddr())
+            .childOption(ChannelOption.TCP_NODELAY, SystemProperties.tcp_nodelay())
+            .childOption(ChannelOption.SO_KEEPALIVE, SystemProperties.tcp_so_keepalive());
+
+</code></pre>
+
+<p>client端（RpcConnectionFactory）</p>
+
+<pre><code class="language-java">bootstrap.group(workerGroup).channel(NioSocketChannel.class)
+            .option(ChannelOption.TCP_NODELAY, SystemProperties.tcp_nodelay())
+            .option(ChannelOption.SO_REUSEADDR, SystemProperties.tcp_so_reuseaddr())
+            .option(ChannelOption.SO_KEEPALIVE, SystemProperties.tcp_so_keepalive());
+</code></pre>
+
+        
+          <div class="blog-tags">
+            
+              <a href="http://arebya.com/tags/tcp/">tcp</a>&nbsp;
+            
+              <a href="http://arebya.com/tags/netty/">netty</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://arebya.com/post/algorithm/" data-toggle="tooltip" data-placement="top" title="算法和数据结构离我们有多远？">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://arebya.com/post/2038/" data-toggle="tooltip" data-placement="top" title="2038 问题">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:shiya6900@126.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/arebya" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2018
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://arebya.com">arebya</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.51</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://arebya.com/js/main.js"></script>
+<script src="http://arebya.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="http://arebya.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

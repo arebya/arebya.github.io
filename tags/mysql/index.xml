@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on arebya</title>
+    <link>http://arebya.com/tags/mysql/</link>
+    <description>Recent content in Mysql on arebya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>shiya6900@126.com</managingEditor>
+    <webMaster>shiya6900@126.com</webMaster>
+    <lastBuildDate>Mon, 09 Apr 2018 19:05:35 +0000</lastBuildDate>
+    
+	<atom:link href="http://arebya.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mysql_index</title>
+      <link>http://arebya.com/post/mysql-index/</link>
+      <pubDate>Mon, 09 Apr 2018 19:05:35 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/mysql-index/</guid>
+      <description>以下内容基于mysql innodb引擎
+索引数据结构 #### B-tree
+#### B+tree
+索引存储结构 #### 聚集索引
+#### 非聚集索引
+索引的应用 #### B+索引
+#### 自适应hash索引
+#### 全文索引
+### 为什么是B+ tree
+主要考虑两点：磁盘IO次数、区间访问（基于范围的查询）效率
+##### 和红黑树对比 在大规模数据存储的时候，红黑树往往出现由于树的深度过大而造成磁盘IO读写过于频繁，进而导致效率低下的情况。在内存中使用改数据结构比较多
+#### 和B-tree对比 B-树（B类树）的特定就是每层节点数目非常多，层数很少，目的就是为了就少磁盘IO次数。但是B-树的每个节点都有data域（指针），这无疑增大了节点大小，说白了增加了磁盘IO次数（磁盘IO一次读出的数据量大小是固定的，单个数据变大，每次读出的就少，IO次数增多）</description>
+    </item>
+    
+    <item>
+      <title>mysql_conversion</title>
+      <link>http://arebya.com/post/mysql-conversion/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:00 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/mysql-conversion/</guid>
+      <description> 隐式类型转换 数据类型字段 如果以数字开关的，后面的字符将被截断，只取前面的数字值，如果不以数字开关的将被置为0
+table表中的columnA字段为int类型
+select * from table where columnA=&#39;7788Ab&#39;  相当于
+select * from table where columnA=7788  而
+select * from table where columnA=&#39;Ab7788&#39;  相当于
+select * from table where columnA=0  字符类型字段 table表中的columnB字段为varchar类型,且有索引idx_columnB
+select * from table where columnB=&#39;7788Ab&#39;  可以正常使用索引 而
+select * from table where columnB=7788  发生隐式类型转换，不能使用索引
+官方规则  两个参数至少有一个是 NULL 时，比较的结果也是 NULL，例外是使用 &amp;lt;=&amp;gt; 对两个 NULL 做比较时会返回 1，这两种情况都不需要做类型转换 两个参数都是字符串，会按照字符串来比较，不做类型转换 两个参数都是整数，按照整数来比较，不做类型转换 十六进制的值和非数字做比较时，会被当做二进制串 有一个参数是 TIMESTAMP 或 DATETIME，并且另外一个参数是常量，常量会被转换为 timestamp 有一个参数是 decimal 类型，如果另外一个参数是 decimal 或者整数，会将整数转换为 decimal 后进行比较，如果另外一个参数是浮点数，则会把 decimal 转换为浮点数进行比较 所有其他情况下，两个参数都会被转换为浮点数再进行比较  </description>
+    </item>
+    
+    <item>
+      <title>mysql_hint_comment</title>
+      <link>http://arebya.com/post/mysql-hint-comment/</link>
+      <pubDate>Tue, 27 Mar 2018 15:06:15 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/mysql-hint-comment/</guid>
+      <description>Mysql 语法 comment https://dev.mysql.com/doc/refman/5.7/en/comments.html
+hint 应用 Cobar中的应用 https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/hint/PartitionOperandHintParser.java
+https://github.com/alibaba/cobar/blob/03c2d08aed913726c14fd9640d928aa9d8edf896/server/src/main/route/com/alibaba/cobar/route/ServerRouter.java
+MyCat中的应用 https://github.com/MyCATApache/Mycat-Server/blob/712518e8ce257f34f71088d0fffb74d40c675a54/src/main/java/io/mycat/route/RouteService.java
+可扩展的应用 分布式调用追踪——————业务追踪溯源</description>
+    </item>
+    
+  </channel>
+</rss>

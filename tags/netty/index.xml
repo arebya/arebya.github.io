@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netty on arebya</title>
+    <link>http://arebya.com/tags/netty/</link>
+    <description>Recent content in Netty on arebya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>shiya6900@126.com</managingEditor>
+    <webMaster>shiya6900@126.com</webMaster>
+    <lastBuildDate>Mon, 29 Oct 2018 20:37:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://arebya.com/tags/netty/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从socket api的几个方法看tcp机制</title>
+      <link>http://arebya.com/post/tcp-related/</link>
+      <pubDate>Mon, 29 Oct 2018 20:37:21 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/tcp-related/</guid>
+      <description>&lt;h2 id=&#34;背景问题&#34;&gt;背景问题&lt;/h2&gt;
+
+&lt;p&gt;在使用rpc框架时，设置socket参数时会使用到下面的api：&lt;/p&gt;
+
+&lt;p&gt;soccket.setReceiveBufferSize()&amp;mdash;&amp;mdash;设置接受数据的缓冲区大小&lt;/p&gt;
+
+&lt;p&gt;socket.setSendBufferSize()&amp;mdash;&amp;mdash;&amp;mdash;-设置发送数据的缓冲区大小&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>so_broadcast</title>
+      <link>http://arebya.com/post/so-broadcast/</link>
+      <pubDate>Fri, 23 Mar 2018 10:53:38 +0000</pubDate>
+      <author>shiya6900@126.com</author>
+      <guid>http://arebya.com/post/so-broadcast/</guid>
+      <description>Netty在开发基于udp协议的代码中server段设置的参数broadcast有什么意义？
+public static void initServer() { EventLoopGroup group = new NioEventLoopGroup(); try { Bootstrap bootstrap = new Bootstrap(); bootstrap.group(group) .channel(NioDatagramChannel.class) .option(ChannelOption.SO_BROADCAST, true) .handler(new UdpServerHandler()); Channel channel = bootstrap.bind(AppConstants.SEARCH_PORT).sync().channel(); channel.closeFuture().await(); } catch (InterruptedException e) { e.printStackTrace(); } finally { group.shutdownGracefully(); } }  设置SO_BROADCAST选项为0，只接受单播数据报 设置SO_BROADCASE选项为1，接受UDP广播</description>
+    </item>
+    
+  </channel>
+</rss>
