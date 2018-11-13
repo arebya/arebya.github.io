@@ -11,6 +11,7 @@ tags:
 soccket.setReceiveBufferSize()------设置接受数据的缓冲区大小
 
 socket.setSendBufferSize()----------设置发送数据的缓冲区大小
+<!-- more -->
 
 socket.setTcpNoDelay()--------------是否开启Nagle算法，true开启，false关闭
 
